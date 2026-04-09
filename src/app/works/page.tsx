@@ -148,7 +148,7 @@ const Colors = ({ colors, handleCopy, copiedColor, lastCopied }: { colors: strin
       <div className={`transition-all duration-[400ms] flex items-center ${copiedColor && colors.includes(copiedColor) ? 'max-w-[180px] opacity-100' : 'max-w-0 opacity-0 overflow-hidden'}`}>
         <span 
           className="text-[14px] font-medium whitespace-nowrap ml-[8px]"
-          style={{ color: copiedColor || lastCopied || '#FFB703' }}
+          style={{ color: (copiedColor === '#FFFFFF' || copiedColor === '#ffffff' || lastCopied === '#FFFFFF' || lastCopied === '#ffffff') ? '#000000' : (copiedColor || lastCopied || '#FFB703') }}
         >
           Copied {copiedColor || lastCopied}!
         </span>
@@ -178,7 +178,7 @@ export default function Works() {
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white isolation-auto">
       
       <header className="flex items-center justify-between sticky top-0 py-[12px] md:py-[20px] z-[9999] mb-[40px] -mx-6 px-6 md:mx-0 md:px-0">
-        <Link href="/" className="group text-[16px] md:text-[20px] text-white mix-blend-difference hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap pointer-events-auto">
+        <Link href="/" className="group text-[16px] md:text-[20px] text-black hover:opacity-70 transition-opacity flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap" style={{filter: 'drop-shadow(0 0 6px rgba(255,255,255,0.8))'}}>
           <ArrowIcon className="rotate-180" /> go back
         </Link>
         <div className="flex items-center">
