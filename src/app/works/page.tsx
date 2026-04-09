@@ -138,15 +138,18 @@ const Colors = ({ colors, handleCopy, copiedColor }: { colors: string[], handleC
               style={{ backgroundColor: c, zIndex: colors.length - i }} 
               title={`Click to copy ${c}`}
             >
-              <div className="absolute -inset-2 rounded-full cursor-pointer" />
+              <div className="absolute -inset-1 rounded-full cursor-pointer" />
             </div>
           );
         })}
       </div>
       
       {/* COPIED FEEDBACK */}
-      <div className={`overflow-hidden transition-all duration-300 flex items-center ${copiedColor && colors.includes(copiedColor) ? 'max-w-[120px] opacity-100' : 'max-w-0 opacity-0'}`}>
-        <span className="text-[14px] text-amber font-medium whitespace-nowrap ml-[8px]">
+      <div className={`overflow-hidden transition-all duration-300 flex items-center ${copiedColor && colors.includes(copiedColor) ? 'max-w-[150px] opacity-100' : 'max-w-0 opacity-0'}`}>
+        <span 
+          className="text-[14px] font-medium whitespace-nowrap ml-[8px]"
+          style={{ color: copiedColor || '#FFB703' }}
+        >
           Copied {copiedColor}!
         </span>
       </div>
