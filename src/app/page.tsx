@@ -209,94 +209,69 @@ export default function Portfolio() {
 
       <div className="flex flex-col gap-[80px] md:gap-[140px]">
         {/* SECTION 2: HOW I WORK */}
-        <FadeInSection>
-          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
-          <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
-            <Image
-              src={howIWorkImg}
-              alt="how i work screenshot"
-              width={440}
-              height={264}
-              className="w-full h-auto object-cover"
-            />
-          </div>
+        <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
+          <FadeInSection>
+            <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
+              <Image src={howIWorkImg} alt="how i work screenshot" width={440} height={264} className="w-full h-auto object-cover" />
+            </div>
+          </FadeInSection>
           <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
-            <div className="text-[23px] font-normal leading-tight">
-              <AmberDot />
-              how i work
-            </div>
-            
-            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1} duration={2.5}>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> understand the business problem & define what the site needs to achieve</div>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> design full layout, components & visual system in Figma</div>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> build it in code using modern frameworks — pixel perfect to the design</div>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> handle SEO basics, performance & deployment so it's ready to go live</div>
+            <Reveal className="flex flex-col gap-[10px] items-center md:items-start" stagger={0.18} duration={2.5}>
+              <div className="text-[23px] font-normal leading-tight w-full">
+                <AmberDot />how i work
+              </div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> understand the business problem &amp; define what the site needs to achieve</div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> design full layout, components &amp; visual system in Figma</div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> build it in code using modern frameworks — pixel perfect to the design</div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> handle SEO basics, performance &amp; deployment so it&apos;s ready to go live</div>
+              <div className="mt-[18px]">
+                <SolidButton href="/works" className="flex items-center gap-[8px]">
+                  <ArrowIcon /> view works
+                </SolidButton>
+              </div>
             </Reveal>
-            
-            <div className="mt-[28px]">
-              <SolidButton href="/works" className="flex items-center gap-[8px]">
-                 <ArrowIcon /> view works
-              </SolidButton>
-            </div>
           </div>
         </section>
-        </FadeInSection>
 
         {/* SECTION 3: NOTION */}
-        <FadeInSection>
-          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
-          <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
-            <Image
-              src={notionImg}
-              alt="notion board screenshot"
-              width={440}
-              height={264}
-              className="w-full h-auto object-cover"
-            />
-          </div>
+        <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
+          <FadeInSection>
+            <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
+              <Image src={notionImg} alt="notion board screenshot" width={440} height={264} className="w-full h-auto object-cover" />
+            </div>
+          </FadeInSection>
           <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
-            <div className="text-[23px] font-normal leading-tight">
-              <AmberDot />
-              every project lives in notion
-            </div>
-            
-            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1} duration={2.5}>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> each section / page grouped</div>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> tasks ranked by difficulty, assignee, due date, etc</div>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> nothing slips through the cracks</div>
+            <Reveal className="flex flex-col gap-[10px] items-center md:items-start" stagger={0.18} duration={2.5}>
+              <div className="text-[23px] font-normal leading-tight w-full">
+                <AmberDot />every project lives in notion
+              </div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> each section / page grouped</div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> tasks ranked by difficulty, assignee, due date, etc</div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> nothing slips through the cracks</div>
+              <div className="mt-[18px]">
+                <SolidButton href="https://t.me/maybellineswag" target="_blank" className="flex items-center gap-[10px]">
+                  <TelegramIcon /> contact me
+                </SolidButton>
+              </div>
             </Reveal>
-            
-            <div className="mt-[28px]">
-              <SolidButton href="https://t.me/maybellineswag" target="_blank" className="flex items-center gap-[10px]">
-                <TelegramIcon /> contact me
-              </SolidButton>
-            </div>
           </div>
         </section>
-        </FadeInSection>
 
         {/* SECTION 4: BACKGROUND */}
-        <FadeInSection>
-          <section id="background" className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
-          <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
-            <Image
-              src={merchImg}
-              alt="my background"
-              width={440}
-              height={237}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
-            <div className="text-[23px] font-normal leading-tight">
-              <AmberDot />
-              my background
+        <section id="background" className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
+          <FadeInSection>
+            <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
+              <Image src={merchImg} alt="my background" width={440} height={237} className="w-full h-auto object-cover" />
             </div>
-            
-            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-start" stagger={0.1} duration={2.5}>
-              <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> i have a background in merch, cover art & general graphic design for various music artists & clothing brands</div>
-              <div className="text-[18px] leading-[1.4]" >
-                <ArrowIcon className="inline-block mr-[8px] align-middle" /> 
+          </FadeInSection>
+          <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
+            <Reveal className="flex flex-col gap-[10px] items-start" stagger={0.18} duration={2.5}>
+              <div className="text-[23px] font-normal leading-tight w-full">
+                <AmberDot />my background
+              </div>
+              <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> i have a background in merch, cover art &amp; general graphic design for various music artists &amp; clothing brands</div>
+              <div className="text-[18px] leading-[1.4] w-full">
+                <ArrowIcon className="inline-block mr-[8px] align-middle" />{" "}
                 some of my past clients are{" "}
                 <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors">The Weeknd</a>,{" "}
                 <a href="https://www.instagram.com/skyrompiendo/" target="_blank" className="hover:text-amber transition-colors">Sky Rompiendo</a>,{" "}
@@ -308,18 +283,16 @@ export default function Portfolio() {
                 <a href="https://www.instagram.com/mollysantana00/" target="_blank" className="hover:text-amber transition-colors">Molly Santana</a>,{" "}
                 <a href="https://www.instagram.com/maluma/" target="_blank" className="hover:text-amber transition-colors">Maluma</a>,{" "}
                 <a href="https://www.instagram.com/untiljapan/" target="_blank" className="hover:text-amber transition-colors">Untiljapan</a>,{" "}
-                <a href="https://www.instagram.com/seventhheaven/" target="_blank" className="hover:text-amber transition-colors">Seventh Heaven</a> & more
+                <a href="https://www.instagram.com/seventhheaven/" target="_blank" className="hover:text-amber transition-colors">Seventh Heaven</a> &amp; more
+              </div>
+              <div className="mt-[18px]">
+                <SolidButton href="/works" className="flex items-center gap-[10px]">
+                  <ArrowIcon /> view works
+                </SolidButton>
               </div>
             </Reveal>
-            
-            <div className="mt-[28px]">
-              <SolidButton href="/works" className="flex items-center gap-[10px]">
-                 <ArrowIcon /> view works
-              </SolidButton>
-            </div>
           </div>
         </section>
-        </FadeInSection>
       </div>
     </main>
   );

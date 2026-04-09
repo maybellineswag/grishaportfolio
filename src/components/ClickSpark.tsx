@@ -119,6 +119,27 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
         const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
         const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
 
+        // Check if color is near-white and needs a dark outline for visibility
+        const isNearWhite = (() => {
+          const c = dynamicColor.replace('#','');
+          if (c.length === 6) {
+            const r = parseInt(c.slice(0,2),16);
+            const g = parseInt(c.slice(2,4),16);
+            const b = parseInt(c.slice(4,6),16);
+            return (r + g + b) / 3 > 200;
+          }
+          return false;
+        })();
+
+        if (isNearWhite) {
+          ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+          ctx.lineWidth = 4;
+          ctx.beginPath();
+          ctx.moveTo(x1, y1);
+          ctx.lineTo(x2, y2);
+          ctx.stroke();
+        }
+
         ctx.strokeStyle = dynamicColor;
         ctx.lineWidth = 2;
         ctx.beginPath();
