@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeInSection } from '@/components/FadeInSection';
@@ -66,6 +69,12 @@ const ArrowIcon = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
+const TelegramIcon = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 293.81 244.52" fill="currentColor" className={`w-[16px] h-[16px] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12 ${className}`}>
+    <path d="M293.81,21.97c-3.9,27.05-7.9,57.63-12.81,88.07-5.67,35.17-12.12,70.21-18.27,105.31-.55,3.14-1.25,6.28-2.19,9.33-6.04,19.57-16.89,25.24-34.28,14.45-31.29-19.41-61.65-40.36-91.86-61.45-10.63-7.42-10.65-15.31-.66-25.21,21.64-21.45,43.98-42.2,65.98-63.29,5.5-5.27,11.13-10.48,16.03-16.28,2.22-2.62,2.81-6.6,4.15-9.96-3.57,.45-7.81-.19-10.61,1.52-13.66,8.36-27.03,17.23-40.34,26.15-22.97,15.38-45.92,30.8-68.69,46.47-14.02,9.65-28.75,13.54-45.46,8.24-14.49-4.6-29.3-8.22-43.58-13.37C6.57,130.27,.28,125.33,0,121.52c-.27-3.81,5.27-9.79,9.66-11.86,22.78-10.75,45.89-20.85,69.11-30.62C136.31,54.81,193.94,30.83,251.61,6.93c6.61-2.74,13.58-4.88,20.59-6.28,14.11-2.82,21.46,3.51,21.61,21.32Z"/>
+  </svg>
+);
+
 
 const AmberDot = () => (
   <span className="inline-block w-[12px] h-[12px] rounded-full bg-amber mr-[8px] align-middle" />
@@ -108,20 +117,42 @@ const TechIcons = ({ icons }: { icons: any[] }) => (
   </div>
 );
 
-const Colors = ({ colors }: { colors: string[] }) => (
-  <div className="flex items-center -space-x-[8px] mt-[12px] mb-[16px]">
-    {colors.map((c, i) => {
-      const isWhite = c.toLowerCase() === '#ffffff' || c.toLowerCase() === 'white';
-      return (
-        <div 
-          key={i} 
-          className={`w-[24px] h-[24px] rounded-full border ${isWhite ? 'border-black/10' : 'border-white'}`} 
-          style={{ backgroundColor: c, zIndex: colors.length - i }} 
-        />
-      );
-    })}
-  </div>
-);
+const Colors = ({ colors }: { colors: string[] }) => {
+  const [copiedColor, setCopiedColor] = useState<string | null>(null);
+
+  const handleCopy = (hex: string) => {
+    navigator.clipboard.writeText(hex);
+    setCopiedColor(hex);
+    setTimeout(() => setCopiedColor(null), 2000);
+  };
+
+  return (
+    <div className="flex items-center gap-[12px] mt-[12px] mb-[16px]">
+      <div className="flex items-center -space-x-[8px]">
+        {colors.map((c, i) => {
+          const isWhite = c.toLowerCase() === '#ffffff' || c.toLowerCase() === 'white';
+          return (
+            <div 
+              key={i} 
+              onClick={() => handleCopy(c)}
+              className={`w-[24px] h-[24px] rounded-full border cursor-pointer hover:scale-110 transition-transform ${isWhite ? 'border-black/10' : 'border-white'}`} 
+              style={{ backgroundColor: c, zIndex: colors.length - i }} 
+              title={`Click to copy ${c}`}
+            />
+          );
+        })}
+      </div>
+      
+      {/* COPIED FEEDBACK */}
+      <div className={`overflow-hidden transition-all duration-300 flex items-center ${copiedColor ? 'max-w-[120px] opacity-100' : 'max-w-0 opacity-0'}`}>
+        <span className="text-[14px] text-amber font-medium whitespace-nowrap ml-[8px]">
+          Copied {copiedColor}!
+        </span>
+      </div>
+    </div>
+  );
+};
+
 
 export default function Works() {
   return (
@@ -136,7 +167,7 @@ export default function Works() {
           grisha obolenskiy
         </Link>
         <SolidButton href="https://t.me/maybellineswag" target="_blank" className="flex items-center gap-[8px]">
-          <ArrowIcon /> get in touch
+          <TelegramIcon /> get in touch
         </SolidButton>
       </header>
 

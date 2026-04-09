@@ -19,7 +19,7 @@ const AmberDot = () => (
 );
 
 const TelegramIcon = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 293.81 244.52" fill="currentColor" className={`w-[16px] h-[16px] ${className}`}>
+  <svg viewBox="0 0 293.81 244.52" fill="currentColor" className={`w-[16px] h-[16px] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12 ${className}`}>
     <path d="M293.81,21.97c-3.9,27.05-7.9,57.63-12.81,88.07-5.67,35.17-12.12,70.21-18.27,105.31-.55,3.14-1.25,6.28-2.19,9.33-6.04,19.57-16.89,25.24-34.28,14.45-31.29-19.41-61.65-40.36-91.86-61.45-10.63-7.42-10.65-15.31-.66-25.21,21.64-21.45,43.98-42.2,65.98-63.29,5.5-5.27,11.13-10.48,16.03-16.28,2.22-2.62,2.81-6.6,4.15-9.96-3.57,.45-7.81-.19-10.61,1.52-13.66,8.36-27.03,17.23-40.34,26.15-22.97,15.38-45.92,30.8-68.69,46.47-14.02,9.65-28.75,13.54-45.46,8.24-14.49-4.6-29.3-8.22-43.58-13.37C6.57,130.27,.28,125.33,0,121.52c-.27-3.81,5.27-9.79,9.66-11.86,22.78-10.75,45.89-20.85,69.11-30.62C136.31,54.81,193.94,30.83,251.61,6.93c6.61-2.74,13.58-4.88,20.59-6.28,14.11-2.82,21.46,3.51,21.61,21.32Z"/>
   </svg>
 );
@@ -76,7 +76,7 @@ export default function Portfolio() {
       <div className="h-[calc(100vh-40px)] flex flex-col justify-between relative">
         {/* SECTION 1: HERO */}
         <FadeInSection>
-          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-center md:items-start text-center md:text-left">
+          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
             <div className="hidden md:flex w-full md:w-[440px] shrink-0 justify-center md:justify-end">
                <div className="relative md:left-[-40px]">
                 <Image
@@ -93,31 +93,16 @@ export default function Portfolio() {
               grisha obolenskiy
             </div>
             
-            {/* MOBILE UNDERLINED BLOCK */}
-            <div className="flex flex-col md:hidden text-[17px] leading-[1.4] mt-[24px] gap-[2px]">
-              <div className="border-b-[2px] border-[#007AFF] pb-[2px] inline-flex mx-auto justify-center">ui ux & web designer</div>
-              <div className="border-b-[2px] border-[#007AFF] pb-[2px] inline-flex items-center gap-[4px] mx-auto justify-center">
-                based in 
-                <div className="relative px-2 flex items-center h-full">
-                  <Image src={europeIcon} alt="europe" width={32} height={32} className="absolute inset-0 opacity-40 scale-150 transition-transform" />
-                  <span className="relative">europe</span>
-                </div>
-              </div>
-              <div className="border-b-[2px] border-[#007AFF] pb-[2px] inline-flex mx-auto justify-center">open to remote & on-site roles</div>
-              <div className="border-b-[2px] border-[#007AFF] pb-[2px] inline-flex mx-auto justify-center">fluent in english, russian & czech</div>
-            </div>
-
-            {/* DESKTOP BIO BLOCK */}
-            <div className="hidden md:block leading-[1.4] mt-[20px]">
+            <div className="leading-[1.4] mt-[20px]">
               ui ux & product designer<br />
               <span className="flex items-center gap-[8px] inline-flex">
-                based in <Image src={europeIcon} alt="europe" width={40} height={40} /> europe
+                based in <Image src={europeIcon} alt="europe" width={32} height={32} /> europe
               </span><br />
               open to remote & on-site roles<br />
               fluent in english, russian & czech
             </div>
             
-            <p className="mt-[28px] leading-[1.4] text-center md:text-left">
+            <p className="mt-[28px] leading-[1.4] text-left">
               experience in building <br />
               <Link href="/works" className="group underline font-serif italic text-black tracking-normal hover:text-amber transition-colors inline-flex items-center gap-[4px] -m-2 p-2">
                 real websites
@@ -126,8 +111,10 @@ export default function Portfolio() {
             </p>
             
             <div className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-1">
-               <div>maybellineswag</div>
-               <div className="flex items-center justify-center gap-1">
+               <div className="flex items-center gap-2">
+                 <span>maybellineswag</span>
+               </div>
+               <div className="flex items-center gap-2">
                  <MailIcon className="text-amber" />
                  <span>advantagesofkindness@gmail.com</span>
                </div>
@@ -155,7 +142,7 @@ export default function Portfolio() {
             <div className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-[4px] text-[#888888]">
                <div className="flex items-center gap-[8px] group cursor-pointer -m-2 p-2">
                  <TelegramIcon className="text-amber" /> 
-                 <div className="text-[#111111] hover:text-amber transition-colors">
+                 <div className="text-[#111111] group-hover:text-amber transition-colors">
                    <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer">@maybellineswag</a>
                  </div>
                </div>
@@ -189,8 +176,8 @@ export default function Portfolio() {
                  </div>
             </div>
             
-            <div className="flex items-center justify-center md:justify-start gap-[24px] mt-[32px]">
-              <SolidButton href="/works" className="flex items-center gap-[8px] w-full md:w-auto justify-center md:justify-start bg-amber rounded-xl py-[16px] md:py-[12px]">
+            <div className="flex items-center justify-start gap-[24px] mt-[32px]">
+              <SolidButton href="/works" className="flex items-center gap-[8px] w-[260px] md:w-auto justify-center md:justify-start bg-amber py-[16px] md:py-[12px]">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-[20px] h-[20px] block md:hidden transition-transform duration-300 group-hover:translate-x-1">
                   <path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" />
                 </svg>
