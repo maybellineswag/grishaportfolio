@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLenis } from 'lenis/react';
 import { FadeInSection } from '@/components/FadeInSection';
+import { Reveal } from '@/components/Reveal';
 import heroPortrait from '../../assetshomepage/hero.jpeg';
 import howIWorkImg from '../../assetshomepage/howiwork.png';
 import notionImg from '../../assetshomepage/notion.png';
@@ -93,22 +94,28 @@ export default function Portfolio() {
               grisha obolenskiy
             </div>
             
-            <div className="leading-[1.4] mt-[20px]">
-              ui ux & product designer<br />
-              <span className="flex items-center gap-[8px] inline-flex">
+            <Reveal className="leading-[1.4] mt-[20px]" stagger={0.15}>
+              <div>ui ux & product designer</div>
+              <div className="flex items-center gap-[8px] inline-flex">
                 based in <Image src={europeIcon} alt="europe" width={32} height={32} /> europe
-              </span><br />
-              open to remote & on-site roles<br />
-              fluent in english, russian & czech
-            </div>
+              </div>
+              <div>open to remote & on-site roles</div>
+              <div>fluent in english, russian & czech</div>
+            </Reveal>
             
-            <p className="mt-[28px] leading-[1.4] text-left">
-              experience in building <br />
-              <Link href="/works" className="group underline font-serif italic text-black tracking-normal hover:text-amber transition-colors inline-flex items-center gap-[4px] -m-2 p-2">
-                real websites
-              </Link> across <span className="text-amber">multiple industries</span> focusing on<br className="hidden md:block" />
-              user experience & solving client problems
-            </p>
+            <Reveal className="mt-[28px] leading-[1.4] text-left" stagger={0.1} delay={0.4}>
+              <div>
+                experience in building
+              </div>
+              <div>
+                <Link href="/works" className="group underline font-serif italic text-black tracking-normal hover:text-amber transition-colors inline-flex items-center gap-[4px] -m-2 p-2">
+                  real websites
+                </Link> across <span className="text-amber">multiple industries</span> focusing on
+              </div>
+              <div>
+                user experience & solving client problems
+              </div>
+            </Reveal>
             
             <div className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-1">
                <div className="flex items-center gap-2">
@@ -217,12 +224,12 @@ export default function Portfolio() {
               how i work
             </div>
             
-            <div className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start">
+            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1}>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> understand the business problem & define what the site needs to achieve</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> design full layout, components & visual system in Figma</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> build it in code using modern frameworks — pixel perfect to the design</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> handle SEO basics, performance & deployment so it's ready to go live</div>
-            </div>
+            </Reveal>
             
             <div className="mt-[28px]">
               <SolidButton href="/works" className="flex items-center gap-[8px]">
@@ -251,11 +258,11 @@ export default function Portfolio() {
               every project lives in notion
             </div>
             
-            <div className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start">
+            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1}>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> each section / page grouped</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> tasks ranked by difficulty, assignee, due date, etc</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> nothing slips through the cracks</div>
-            </div>
+            </Reveal>
             
             <div className="mt-[28px]">
               <SolidButton href="https://t.me/maybellineswag" target="_blank" className="flex items-center gap-[10px]">
