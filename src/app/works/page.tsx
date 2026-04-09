@@ -208,7 +208,7 @@ export default function Works() {
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
             <Image src={genneroLogo} alt="Gennero" className="h-[24px] w-auto object-contain mb-[8px]" />
             <div className="text-[22px]">modern gynaecology & cosmetology</div>
-            <Colors colors={['#112250', '#8FB3D4', '#EFD2DC']} />
+            <Colors colors={['#112250', '#8FB3D4', '#EFD2DC']} handleCopy={handleCopy} copiedColor={copiedColor} />
             <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> full product design & dev, UX & booking system integration</div>
             <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}, {src: altegioIcon}]} />
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
@@ -232,7 +232,7 @@ export default function Works() {
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
              <Image src={dimensionLogo} alt="Dimension" className="h-[32px] w-auto object-contain mb-[8px]" />
             <div className="text-[22px]">ai saas for tiktok shop</div>
-            <Colors colors={['#FF5401', '#EF9F39', '#C1C5B4', '#C1C5B4']} />
+            <Colors colors={['#FF5401', '#EF9F39', '#C1C5B4', '#C1C5B4']} handleCopy={handleCopy} copiedColor={copiedColor} />
             <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> branding & assets</div>
             <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}]} />
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
@@ -292,7 +292,7 @@ export default function Works() {
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
             <Image src={aeroformLogo} alt="Aeroform" className="h-[24px] w-auto object-contain mb-[8px]" />
             <div className="text-[22px]">industrial-grade sewing company</div>
-            <Colors colors={['#112250', '#5D6B84', '#AAB4C0', '#FFFFFF']} />
+            <Colors colors={['#112250', '#5D6B84', '#AAB4C0', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} />
             <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
              <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
