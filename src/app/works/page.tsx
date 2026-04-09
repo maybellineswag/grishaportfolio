@@ -127,14 +127,14 @@ const TechIcons = ({ icons }: { icons: any[] }) => (
 const Colors = ({ colors, handleCopy, copiedColor }: { colors: string[], handleCopy: (hex: string) => void, copiedColor: string | null }) => {
   return (
     <div className="flex items-center gap-[12px] mt-[12px] mb-[16px]">
-      <div className="flex items-center -space-x-[8px]">
+      <div className="flex items-center md:-space-x-[8px] space-x-[12px] md:space-x-0">
         {colors.map((c, i) => {
           const isWhite = c.toLowerCase() === '#ffffff' || c.toLowerCase() === 'white';
           return (
             <div 
               key={i} 
               onClick={(e) => { e.stopPropagation(); handleCopy(c); }}
-              className={`w-[24px] h-[24px] rounded-full border cursor-pointer hover:scale-110 transition-transform ${isWhite ? 'border-black/10' : 'border-white'} relative group/color`} 
+              className={`w-[24px] h-[24px] rounded-full border cursor-pointer hover:scale-110 transition-transform ${isWhite ? 'border-black/10' : 'border-white'} relative`} 
               style={{ backgroundColor: c, zIndex: colors.length - i }} 
               title={`Click to copy ${c}`}
             >
@@ -144,8 +144,8 @@ const Colors = ({ colors, handleCopy, copiedColor }: { colors: string[], handleC
         })}
       </div>
       
-      {/* COPIED FEEDBACK */}
-      <div className={`overflow-hidden transition-all duration-300 flex items-center ${copiedColor && colors.includes(copiedColor) ? 'max-w-[150px] opacity-100' : 'max-w-0 opacity-0'}`}>
+      {/* COPIED FEEDBACK - STABILIZED */}
+      <div className={`transition-all duration-300 flex items-center ${copiedColor && colors.includes(copiedColor) ? 'max-w-[150px] opacity-100' : 'max-w-0 opacity-0 overflow-hidden'}`}>
         <span 
           className="text-[14px] font-medium whitespace-nowrap ml-[8px]"
           style={{ color: copiedColor || '#FFB703' }}
@@ -170,8 +170,8 @@ export default function Works() {
   return (
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
       
-      <header className="flex items-center justify-between sticky top-0 bg-white/80 backdrop-blur-md py-[12px] md:py-[20px] z-50 mb-[40px] -mx-6 px-6 md:mx-0 md:px-0 border-b border-black/[0.03]">
-        <Link href="/" className="group text-[16px] md:text-[20px] hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
+      <header className="flex items-center justify-between sticky top-0 py-[12px] md:py-[20px] z-50 mb-[40px] -mx-6 px-6 md:mx-0 md:px-0">
+        <Link href="/" className="group text-[16px] md:text-[20px] mix-blend-difference text-white hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
           <ArrowIcon className="rotate-180" /> go back
         </Link>
         <div className="flex items-center">

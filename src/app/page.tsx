@@ -128,7 +128,7 @@ export default function Portfolio() {
                </a>
             </Reveal>
 
-            <Reveal className="mt-[28px] leading-[1.4] hidden md:block" boxClassName="inline-block mr-[0.35em]">
+            <Reveal className="mt-[28px] leading-[1.4] hidden md:block" boxClassName="inline-block mr-[0.22em]">
               <span>past clients: </span>
               <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">The Weeknd</a>
               <span>, </span>
@@ -151,7 +151,7 @@ export default function Portfolio() {
               past clients: The Weeknd, Sp5der, PinkPantheress, Nettspend & more
             </Reveal>
 
-            <Reveal className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-[4px] text-[#888888]" stagger={0.1} delay={0.8}>
+            <Reveal className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-1 text-[#888888]" stagger={0.1} delay={0.8}>
                <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer" className="flex items-center gap-[8px] group -m-2 p-2 w-fit">
                  <TelegramIcon className="text-amber" /> 
                  <div className="text-[#111111] group-hover:text-amber transition-colors">
