@@ -55,6 +55,13 @@ body {
   font-family: var(--font-sans);
 }
 
+@layer base {
+  ::selection {
+    background-color: #FFB703;
+    color: #000;
+  }
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

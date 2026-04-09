@@ -33,6 +33,11 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Spark[]>([]);
   const startTimeRef = useRef<number | null>(null);
+  const [dynamicColor, setDynamicColor] = React.useState(sparkColor);
+
+  useEffect(() => {
+    setDynamicColor(sparkColor);
+  }, [sparkColor]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -114,7 +119,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
         const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
         const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
 
-        ctx.strokeStyle = sparkColor;
+        ctx.strokeStyle = dynamicColor;
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -151,6 +156,16 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
 
     sparksRef.current.push(...newSparks);
   };
+
+  useEffect(() => {
+    const handleSparkColor = (e: any) => {
+      if (e.detail) {
+        setDynamicColor(e.detail);
+      }
+    };
+    window.addEventListener('spark-color', handleSparkColor);
+    return () => window.removeEventListener('spark-color', handleSparkColor);
+  }, []);
 
   return (
     <div className="relative w-full h-full min-h-screen" onClick={handleClick}>

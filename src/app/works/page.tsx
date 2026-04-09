@@ -145,12 +145,12 @@ const Colors = ({ colors, handleCopy, copiedColor }: { colors: string[], handleC
       </div>
       
       {/* COPIED FEEDBACK - STABILIZED */}
-      <div className={`transition-all duration-300 flex items-center ${copiedColor && colors.includes(copiedColor) ? 'max-w-[150px] opacity-100' : 'max-w-0 opacity-0 overflow-hidden'}`}>
+      <div className={`transition-all duration-[400ms] flex items-center ${copiedColor && colors.includes(copiedColor) ? 'max-w-[180px] opacity-100' : 'max-w-0 opacity-0 overflow-hidden'}`}>
         <span 
           className="text-[14px] font-medium whitespace-nowrap ml-[8px]"
           style={{ color: copiedColor || '#FFB703' }}
         >
-          Copied {copiedColor}!
+          Copied {copiedColor || lastCopied}!
         </span>
       </div>
     </div>
@@ -160,18 +160,25 @@ const Colors = ({ colors, handleCopy, copiedColor }: { colors: string[], handleC
 
 export default function Works() {
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
+  const [lastCopied, setLastCopied] = useState<string>('');
 
   const handleCopy = (hex: string) => {
     navigator.clipboard.writeText(hex);
     setCopiedColor(hex);
+    setLastCopied(hex);
+    
+    // Dispatch custom event for ClickSpark theme synchronization
+    const event = new CustomEvent('spark-color', { detail: hex });
+    window.dispatchEvent(event);
+    
     setTimeout(() => setCopiedColor(null), 2000);
   };
 
   return (
-    <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
+    <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white isolation-auto">
       
-      <header className="flex items-center justify-between sticky top-0 py-[12px] md:py-[20px] z-50 mb-[40px] -mx-6 px-6 md:mx-0 md:px-0">
-        <Link href="/" className="group text-[16px] md:text-[20px] mix-blend-difference text-white hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
+      <header className="flex items-center justify-between sticky top-0 py-[12px] md:py-[20px] z-[9999] mb-[40px] -mx-6 px-6 md:mx-0 md:px-0 pointer-events-none">
+        <Link href="/" className="group text-[16px] md:text-[20px] mix-blend-difference text-white hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap pointer-events-auto">
           <ArrowIcon className="rotate-180" /> go back
         </Link>
         <div className="flex items-center">
@@ -198,7 +205,7 @@ export default function Works() {
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
               "How do we eliminate the stigma of used vehicles from Japan to European customers?"
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08}>
+            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={1.2}>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Real auction results displayed directly in the Hero</span>, leading with the price gap because that's the only thing that earns a €100k+ buyer's attention before they've even read a word.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">"Where Your Savings Come From?"</span> traces the exact journey of a car — manufactured in Europe, bought by a diplomat in Tokyo, acquired at Japanese auction — making the arbitrage tangible and eliminating the grey market fear.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Brand selector leads the intake Request your car form</span> — letting the client pick Porsche or Ferrari makes the process feel personal before any commitment. The proposal document mockup shows exactly what a deposited client receives, making the deliverable concrete.</div>
@@ -221,7 +228,7 @@ export default function Works() {
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
               "How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08}>
+            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={1.2}>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full medical team Hero image</span> — leading with real faces rather than stock photography immediately signals authenticity and human warmth, directly addressing the "cold clinical" fear.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Individual doctor profile pages</span> — each doctor gets their own dedicated page with photo, specialty and bio, systematically building personal trust before a patient even books.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">The Services architecture split across three departments</span> — Gynaecology, Cosmetology and Dermatology — with anchor-based navigation so patients land exactly where they need.</div>
