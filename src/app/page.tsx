@@ -54,7 +54,13 @@ const SolidButton = ({ children, className = "", href, target }: { children: Rea
 
 export default function Portfolio() {
   const [emailCopied, setEmailCopied] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const lenis = useLenis();
+
+  useLenis(({ scroll }) => {
+    if (scroll > 50) setScrolled(true);
+    else setScrolled(false);
+  });
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -197,7 +203,7 @@ export default function Portfolio() {
         </FadeInSection>
 
         {/* SCROLL HINT */}
-        <div className="hidden md:flex justify-center gap-[100px] mb-[60px]">
+        <div className={`hidden md:flex justify-center gap-[100px] mb-[60px] transition-opacity duration-500 ${scrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <div className="md:w-[440px] shrink-0" />
           <div className="md:w-[440px] text-[16px] text-[#888888] animate-bounce-slow">
             ↓ scroll to see how i work
