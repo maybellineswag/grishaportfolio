@@ -192,73 +192,129 @@ export default function Works() {
         
         {/* MAGNOLIA */}
         <FadeInSection>
-          <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
-            <ProjectImages images={[magnolia1, magnolia2, magnolia3, magnolia4]} />
-          <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Image src={magnoliaLogo} alt="Magnolia" className="h-[24px] w-auto object-contain mb-[8px]" />
-            <div className="text-[22px]">luxury car import agency</div>
-            <Colors colors={['#403864', '#8781A1', '#D2CEE2']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-            <div className="text-[20px] mb-[8px] flex items-center gap-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}>
-              <ArrowIcon /> full product design & dev, UX & branding
+          <section>
+            {/* Desktop: 2-column */}
+            <div className="hidden md:flex flex-row gap-[100px] items-start">
+              <ProjectImages images={[magnolia1, magnolia2, magnolia3, magnolia4]} />
+              <div className="flex-1 w-full max-w-[540px] sticky top-[140px]">
+                <Image src={magnoliaLogo} alt="Magnolia" className="h-[24px] w-auto object-contain mb-[8px]" />
+                <div className="text-[22px]">luxury car import agency</div>
+                <Colors colors={['#403864', '#8781A1', '#D2CEE2']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
+                <div className="text-[20px] mb-[8px] flex items-center gap-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}><ArrowIcon /> full product design &amp; dev, UX &amp; branding</div>
+                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: geminiIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}]} />
+                <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">"How do we eliminate the stigma of used vehicles from Japan to European customers?"</div>
+                <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Real auction results displayed directly in the Hero</span>, leading with the price gap because that&apos;s the only thing that earns a €100k+ buyer&apos;s attention before they&apos;ve even read a word.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">&quot;Where Your Savings Come From?&quot;</span> traces the exact journey of a car — manufactured in Europe, bought by a diplomat in Tokyo, acquired at Japanese auction — making the arbitrage tangible and eliminating the grey market fear.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Brand selector leads the intake Request your car form</span> — letting the client pick Porsche or Ferrari makes the process feel personal before any commitment. The proposal document mockup shows exactly what a deposited client receives, making the deliverable concrete.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">A four-step process with time estimates (&quot;approve bid — 10 minutes&quot;) in the How It Works?</span> section directly addresses the core objection: that importing is complicated. The <span className="text-black font-normal font-serif italic text-[1.1em]">Vehicles</span> page backs it with real auction data and price comparisons to establish expertise.</div>
+                </Reveal>
+              </div>
             </div>
-            <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: geminiIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}]} />
-            <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
-              "How do we eliminate the stigma of used vehicles from Japan to European customers?"
+            {/* Mobile: info first, then interleaved */}
+            <div className="md:hidden flex flex-col gap-[24px]">
+              <div>
+                <Image src={magnoliaLogo} alt="Magnolia" className="h-[24px] w-auto object-contain mb-[8px]" />
+                <div className="text-[22px]">luxury car import agency</div>
+                <Colors colors={['#403864', '#8781A1', '#D2CEE2']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
+                <div className="text-[20px] mb-[8px] flex items-center gap-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}><ArrowIcon /> full product design &amp; dev, UX &amp; branding</div>
+                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: geminiIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}]} />
+                <div className="text-[20px] italic font-serif text-gray-800">"How do we eliminate the stigma of used vehicles from Japan to European customers?"</div>
+              </div>
+              <Image src={magnolia1} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Real auction results displayed directly in the Hero</span>, leading with the price gap because that&apos;s the only thing that earns a €100k+ buyer&apos;s attention before they&apos;ve even read a word.</div>
+              <Image src={magnolia2} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">&quot;Where Your Savings Come From?&quot;</span> traces the exact journey of a car — manufactured in Europe, bought by a diplomat in Tokyo, acquired at Japanese auction — making the arbitrage tangible and eliminating the grey market fear.</div>
+              <Image src={magnolia3} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Brand selector leads the intake Request your car form</span> — letting the client pick Porsche or Ferrari makes the process feel personal before any commitment.</div>
+              <Image src={magnolia4} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">A four-step process with time estimates (&quot;approve bid — 10 minutes&quot;) in the How It Works?</span> section directly addresses the core objection: that importing is complicated.</div>
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Real auction results displayed directly in the Hero</span>, leading with the price gap because that's the only thing that earns a €100k+ buyer's attention before they've even read a word.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">"Where Your Savings Come From?"</span> traces the exact journey of a car — manufactured in Europe, bought by a diplomat in Tokyo, acquired at Japanese auction — making the arbitrage tangible and eliminating the grey market fear.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Brand selector leads the intake Request your car form</span> — letting the client pick Porsche or Ferrari makes the process feel personal before any commitment. The proposal document mockup shows exactly what a deposited client receives, making the deliverable concrete.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">A four-step process with time estimates ("approve bid — 10 minutes") in the How It Works?</span> section directly addresses the core objection: that importing is complicated. The <span className="text-black font-normal font-serif italic text-[1.1em]">Vehicles</span> page backs it with real auction data and price comparisons to establish expertise.</div>
-            </Reveal>
-          </div>
-        </section>
+          </section>
         </FadeInSection>
 
         {/* GENNERO */}
         <FadeInSection>
-          <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
-          <ProjectImages images={[gennero1, gennero2, gennero3, gennero4]} />
-          <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Image src={genneroLogo} alt="Gennero" className="h-[24px] w-auto object-contain mb-[8px]" />
-            <div className="text-[22px]">modern gynaecology & cosmetology</div>
-            <Colors colors={['#112250', '#8FB3D4', '#EFD2DC']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-            <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> full product design & dev, UX & booking system integration</div>
-            <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}, {src: altegioIcon}]} />
-            <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
-              "How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"
+          <section>
+            {/* Desktop: 2-column */}
+            <div className="hidden md:flex flex-row gap-[100px] items-start">
+              <ProjectImages images={[gennero1, gennero2, gennero3, gennero4]} />
+              <div className="flex-1 w-full max-w-[540px] sticky top-[140px]">
+                <Image src={genneroLogo} alt="Gennero" className="h-[24px] w-auto object-contain mb-[8px]" />
+                <div className="text-[22px]">modern gynaecology &amp; cosmetology</div>
+                <Colors colors={['#112250', '#8FB3D4', '#EFD2DC']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
+                <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> full product design &amp; dev, UX &amp; booking system integration</div>
+                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}, {src: altegioIcon}]} />
+                <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">"How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"</div>
+                <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full medical team Hero image</span> — leading with real faces rather than stock photography immediately signals authenticity and human warmth, directly addressing the &quot;cold clinical&quot; fear.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Individual doctor profile pages</span> — each doctor gets their own dedicated page with photo, specialty and bio, systematically building personal trust before a patient even books.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">The Services architecture split across three departments</span> — Gynaecology, Cosmetology and Dermatology — with anchor-based navigation so patients land exactly where they need.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Altegio online booking fully integrated and configured</span> — patients can book directly from the site, a technical deliverable most designers don&apos;t handle.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Promotional announcement banner</span> — designed for ongoing marketing use so the clinic can push new services without touching the site.</div>
+                </Reveal>
+              </div>
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full medical team Hero image</span> — leading with real faces rather than stock photography immediately signals authenticity and human warmth, directly addressing the "cold clinical" fear.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Individual doctor profile pages</span> — each doctor gets their own dedicated page with photo, specialty and bio, systematically building personal trust before a patient even books.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">The Services architecture split across three departments</span> — Gynaecology, Cosmetology and Dermatology — with anchor-based navigation so patients land exactly where they need.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Altegio online booking fully integrated and configured</span> — patients can book directly from the site, a technical deliverable most designers don't handle.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Promotional announcement banner</span> — designed for ongoing marketing use so the clinic can push new services without touching the site.</div>
-            </Reveal>
-          </div>
-        </section>
+            {/* Mobile: info first, then interleaved */}
+            <div className="md:hidden flex flex-col gap-[24px]">
+              <div>
+                <Image src={genneroLogo} alt="Gennero" className="h-[24px] w-auto object-contain mb-[8px]" />
+                <div className="text-[22px]">modern gynaecology &amp; cosmetology</div>
+                <Colors colors={['#112250', '#8FB3D4', '#EFD2DC']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
+                <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> full product design &amp; dev, UX &amp; booking system integration</div>
+                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}, {src: altegioIcon}]} />
+                <div className="text-[20px] italic font-serif text-gray-800">"How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"</div>
+              </div>
+              <Image src={gennero1} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full medical team Hero image</span> — leading with real faces rather than stock photography immediately signals authenticity and human warmth.</div>
+              <Image src={gennero2} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Individual doctor profile pages</span> — each doctor gets their own dedicated page with photo, specialty and bio, systematically building personal trust before a patient even books.</div>
+              <Image src={gennero3} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">The Services architecture split across three departments</span> — Gynaecology, Cosmetology and Dermatology — with anchor-based navigation so patients land exactly where they need.</div>
+              <Image src={gennero4} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Altegio online booking fully integrated and configured</span> — patients can book directly from the site, a technical deliverable most designers don&apos;t handle.</div>
+            </div>
+          </section>
         </FadeInSection>
 
         {/* DIMENSION */}
         <FadeInSection>
-          <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
-          <ProjectImages images={[dimension1, dimension2, dimension3]} />
-          <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-             <Image src={dimensionLogo} alt="Dimension" className="h-[32px] w-auto object-contain mb-[8px]" />
-            <div className="text-[22px]">ai saas for tiktok shop</div>
-            <Colors colors={['#FF5401', '#EF9F39', '#C1C5B4', '#C1C5B4']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-            <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> branding & assets</div>
-            <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}]} />
-            <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
-              "How do we build a brand identity premium enough to sell an AI product to serious e-commerce businesses as a verified TikTok partner?"
+          <section>
+            {/* Desktop: 2-column */}
+            <div className="hidden md:flex flex-row gap-[100px] items-start">
+              <ProjectImages images={[dimension1, dimension2, dimension3]} />
+              <div className="flex-1 w-full max-w-[540px] sticky top-[140px]">
+                <Image src={dimensionLogo} alt="Dimension" className="h-[32px] w-auto object-contain mb-[8px]" />
+                <div className="text-[22px]">ai saas for tiktok shop</div>
+                <Colors colors={['#FF5401', '#EF9F39', '#C1C5B4', '#C1C5B4']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
+                <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> branding &amp; assets</div>
+                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}]} />
+                <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">"How do we build a brand identity premium enough to sell an AI product to serious e-commerce businesses as a verified TikTok partner?"</div>
+                <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Character mascot designed across multiple states and colorways</span> — giving the AI product a personality that feels approachable rather than cold and technical.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full logo exploration across multiple directions</span> — from geometric 3D cube marks referencing e-commerce and product boxes, to wordmark and icon combinations, giving the client real strategic options.</div>
+                  <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Designed for an official TikTok Shop partner</span> — brand needed to signal credibility and modernity to serious e-commerce operators, not just look good.</div>
+                </Reveal>
+              </div>
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Character mascot designed across multiple states and colorways</span> — giving the AI product a personality that feels approachable rather than cold and technical.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full logo exploration across multiple directions</span> — from geometric 3D cube marks referencing e-commerce and product boxes, to wordmark and icon combinations, giving the client real strategic options.</div>
-              <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Designed for an official TikTok Shop partner</span> — brand needed to signal credibility and modernity to serious e-commerce operators, not just look good.</div>
-            </Reveal>
-          </div>
-        </section>
+            {/* Mobile: info first, then interleaved */}
+            <div className="md:hidden flex flex-col gap-[24px]">
+              <div>
+                <Image src={dimensionLogo} alt="Dimension" className="h-[32px] w-auto object-contain mb-[8px]" />
+                <div className="text-[22px]">ai saas for tiktok shop</div>
+                <Colors colors={['#FF5401', '#EF9F39', '#C1C5B4', '#C1C5B4']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
+                <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> branding &amp; assets</div>
+                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}]} />
+                <div className="text-[20px] italic font-serif text-gray-800">"How do we build a brand identity premium enough to sell an AI product to serious e-commerce businesses as a verified TikTok partner?"</div>
+              </div>
+              <Image src={dimension1} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Character mascot designed across multiple states and colorways</span> — giving the AI product a personality that feels approachable rather than cold and technical.</div>
+              <Image src={dimension2} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full logo exploration across multiple directions</span> — from geometric 3D cube marks referencing e-commerce and product boxes, to wordmark and icon combinations, giving the client real strategic options.</div>
+              <Image src={dimension3} alt="project image" className="w-full h-auto object-cover" />
+              <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Designed for an official TikTok Shop partner</span> — brand needed to signal credibility and modernity to serious e-commerce operators, not just look good.</div>
+            </div>
+          </section>
         </FadeInSection>
 
         {/* MONO */}
