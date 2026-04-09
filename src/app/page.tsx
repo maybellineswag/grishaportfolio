@@ -226,7 +226,7 @@ export default function Portfolio() {
               how i work
             </div>
             
-            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1} duration={1.8}>
+            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1} duration={2.5}>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> understand the business problem & define what the site needs to achieve</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> design full layout, components & visual system in Figma</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> build it in code using modern frameworks — pixel perfect to the design</div>
@@ -260,7 +260,7 @@ export default function Portfolio() {
               every project lives in notion
             </div>
             
-            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1} duration={1.8}>
+            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start" stagger={0.1} duration={2.5}>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> each section / page grouped</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> tasks ranked by difficulty, assignee, due date, etc</div>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> nothing slips through the cracks</div>
@@ -293,7 +293,7 @@ export default function Portfolio() {
               my background
             </div>
             
-            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-start" stagger={0.1} duration={1.8}>
+            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-start" stagger={0.1} duration={2.5}>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> i have a background in merch, cover art & general graphic design for various music artists & clothing brands</div>
               <div className="text-[18px] leading-[1.4]" >
                 <ArrowIcon className="inline-block mr-[8px] align-middle" /> 

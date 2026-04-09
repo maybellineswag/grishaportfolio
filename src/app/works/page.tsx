@@ -177,8 +177,8 @@ export default function Works() {
   return (
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white isolation-auto">
       
-      <header className="flex items-center justify-between sticky top-0 py-[12px] md:py-[20px] z-[9999] mb-[40px] -mx-6 px-6 md:mx-0 md:px-0 mix-blend-difference">
-        <Link href="/" className="group text-[16px] md:text-[20px] text-white hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap pointer-events-auto">
+      <header className="flex items-center justify-between sticky top-0 py-[12px] md:py-[20px] z-[9999] mb-[40px] -mx-6 px-6 md:mx-0 md:px-0">
+        <Link href="/" className="group text-[16px] md:text-[20px] text-white mix-blend-difference hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap pointer-events-auto">
           <ArrowIcon className="rotate-180" /> go back
         </Link>
         <div className="flex items-center">
@@ -205,7 +205,7 @@ export default function Works() {
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
               "How do we eliminate the stigma of used vehicles from Japan to European customers?"
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={1.8}>
+            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Real auction results displayed directly in the Hero</span>, leading with the price gap because that's the only thing that earns a €100k+ buyer's attention before they've even read a word.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">"Where Your Savings Come From?"</span> traces the exact journey of a car — manufactured in Europe, bought by a diplomat in Tokyo, acquired at Japanese auction — making the arbitrage tangible and eliminating the grey market fear.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Brand selector leads the intake Request your car form</span> — letting the client pick Porsche or Ferrari makes the process feel personal before any commitment. The proposal document mockup shows exactly what a deposited client receives, making the deliverable concrete.</div>
@@ -228,7 +228,7 @@ export default function Works() {
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
               "How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={1.8}>
+            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full medical team Hero image</span> — leading with real faces rather than stock photography immediately signals authenticity and human warmth, directly addressing the "cold clinical" fear.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Individual doctor profile pages</span> — each doctor gets their own dedicated page with photo, specialty and bio, systematically building personal trust before a patient even books.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">The Services architecture split across three departments</span> — Gynaecology, Cosmetology and Dermatology — with anchor-based navigation so patients land exactly where they need.</div>
@@ -252,7 +252,7 @@ export default function Works() {
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
               "How do we build a brand identity premium enough to sell an AI product to serious e-commerce businesses as a verified TikTok partner?"
             </div>
-            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08}>
+            <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Character mascot designed across multiple states and colorways</span> — giving the AI product a personality that feels approachable rather than cold and technical.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full logo exploration across multiple directions</span> — from geometric 3D cube marks referencing e-commerce and product boxes, to wordmark and icon combinations, giving the client real strategic options.</div>
               <div><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Designed for an official TikTok Shop partner</span> — brand needed to signal credibility and modernity to serious e-commerce operators, not just look good.</div>
@@ -266,10 +266,10 @@ export default function Works() {
           <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
           <ProjectImages images={[monoImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Reveal stagger={0.1}>
+            <Reveal stagger={0.1} duration={2.5}>
               <Image src={monoLogo} alt="Mono" className="h-[24px] w-auto object-contain mb-[8px]" />
               <div className="text-[22px]">premium tuning & vehicle customisation</div>
-              <Colors colors={['#000000', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} />
+              <Colors colors={['#000000', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
               <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
@@ -285,10 +285,10 @@ export default function Works() {
           <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
           <ProjectImages images={[capenciImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Reveal stagger={0.1}>
+            <Reveal stagger={0.1} duration={2.5}>
               <Image src={capenciLogo} alt="Capenci" className="h-[24px] w-auto object-contain mb-[8px]" />
               <div className="text-[22px]">premium streetwear clothing label</div>
-              <Colors colors={['#0D0701', '#362217', '#CD9F89', '#E6E6E4']} handleCopy={handleCopy} copiedColor={copiedColor} />
+              <Colors colors={['#0D0701', '#362217', '#CD9F89', '#E6E6E4']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
               <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI concept & product design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
@@ -304,14 +304,16 @@ export default function Works() {
           <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
           <ProjectImages images={[aeroformImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Image src={aeroformLogo} alt="Aeroform" className="h-[24px] w-auto object-contain mb-[8px]" />
-            <div className="text-[22px]">industrial-grade sewing company</div>
-            <Colors colors={['#112250', '#5D6B84', '#AAB4C0', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} />
-            <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
-             <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
-            <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
-               "How do we make a manufacturer look credible and professional to the partners and clients that matter?"
-            </div>
+            <Reveal stagger={0.08} duration={2.5}>
+              <Image src={aeroformLogo} alt="Aeroform" className="h-[24px] w-auto object-contain mb-[8px]" />
+              <div className="text-[22px]">industrial-grade sewing company</div>
+              <Colors colors={['#112250', '#5D6B84', '#AAB4C0', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
+              <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
+               <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
+              <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
+                 "How do we make a manufacturer look credible and professional to the partners and clients that matter?"
+              </div>
+            </Reveal>
           </div>
         </section>
         </FadeInSection>
@@ -323,10 +325,10 @@ export default function Works() {
             <ProjectImages images={[avsImg]} />
           </div>
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Reveal stagger={0.1}>
+            <Reveal stagger={0.1} duration={2.5}>
               <Image src={avsLogo} alt="AVS Auto" className="h-[18px] md:h-[24px] w-auto object-contain mb-[8px]" />
               <div className="text-[16px] md:text-[22px]">premium car dealership</div>
-              <Colors colors={['#000000', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} />
+              <Colors colors={['#000000', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
               <div className="text-[14px] md:text-[20px] mb-[8px] flex items-center gap-[4px] md:gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[14px] md:text-[20px] italic font-serif mb-[20px] md:mb-[32px] text-gray-800 leading-tight">
@@ -342,10 +344,10 @@ export default function Works() {
           <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
           <ProjectImages images={[wowflowImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Reveal stagger={0.1}>
+            <Reveal stagger={0.1} duration={2.5}>
               <Image src={wowflowLogo} alt="Wow Flow" className="h-[32px] w-auto object-contain mb-[8px]" />
               <div className="text-[22px]">flowers, alcohol & gift shop</div>
-              <Colors colors={['#DFAE92', '#C5B4A2', '#4F571D', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} />
+              <Colors colors={['#DFAE92', '#C5B4A2', '#4F571D', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
               <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
@@ -361,10 +363,10 @@ export default function Works() {
           <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
           <ProjectImages images={[carsewingImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Reveal stagger={0.1}>
+            <Reveal stagger={0.1} duration={2.5}>
               <Image src={carsewingLogo} alt="Car Sewing" className="h-[24px] w-auto object-contain mb-[8px]" />
               <div className="text-[22px]">interior upholstery studio</div>
-              <Colors colors={['#FBA902', '#000000']} handleCopy={handleCopy} copiedColor={copiedColor} />
+              <Colors colors={['#FBA902', '#000000']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
               <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
@@ -380,10 +382,10 @@ export default function Works() {
           <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
           <ProjectImages images={[vonavkaImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
-            <Reveal stagger={0.1}>
+            <Reveal stagger={0.1} duration={2.5}>
               <Image src={vonavkaLogo} alt="Vonavka" className="h-[40px] w-auto object-contain mb-[8px]" />
               <div className="text-[22px]">detailing studio</div>
-              <Colors colors={['#F3C428', '#000000', '#CDA383']} handleCopy={handleCopy} copiedColor={copiedColor} />
+              <Colors colors={['#F3C428', '#000000', '#CDA383']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
               <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
