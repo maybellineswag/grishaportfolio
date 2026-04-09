@@ -7,26 +7,30 @@ interface RevealProps {
   children: React.ReactNode;
   width?: "fit-content" | "100%";
   className?: string;
+  boxClassName?: string;
   delay?: number;
   stagger?: number;
+  threshold?: number;
 }
 
 export const Reveal = ({ 
   children, 
   width = "100%", 
   className = "", 
+  boxClassName = "block",
   delay = 0,
-  stagger = 0.1 
+  stagger = 0.1,
+  threshold = 0.1
 }: RevealProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, amount: threshold });
   const mainControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
     } else {
-      mainControls.start("hidden"); // Optional: ensure it can reset
+      mainControls.start("hidden"); // Ensure it can reset
     }
   }, [isInView, mainControls]);
 
@@ -53,12 +57,8 @@ export const Reveal = ({
     },
   } as const;
 
-  // If children is already an array, treat them as items to stagger
-  // If it's a single item (like a paragraph), we might want to split it by lines manually
-  // For most of our use cases, we wrap existing blocks.
-  
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }} className={className}>
+    <div ref={ref} style={{ position: "relative", width, overflow: "visible" }} className={className}>
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -67,7 +67,7 @@ export const Reveal = ({
         {React.Children.map(children, (child) => {
           if (!child) return null;
           return (
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className={boxClassName}>
               {child}
             </motion.div>
           );

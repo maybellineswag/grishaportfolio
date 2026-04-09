@@ -161,17 +161,19 @@ export default function Works() {
   return (
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
       
-      <header className="flex items-center justify-between sticky top-0 bg-gradient-to-b from-white via-white to-transparent py-[20px] z-50 mb-[40px] px-2 md:-mx-2">
-        <Link href="/" className="group text-[20px] hover:text-amber transition-colors flex items-center gap-[8px] -m-2 p-2 focus:outline-none">
+      <header className="flex items-center justify-between sticky top-0 bg-white/80 backdrop-blur-md py-[12px] md:py-[20px] z-50 mb-[40px] -mx-6 px-6 md:mx-0 md:px-0 border-b border-black/[0.03]">
+        <Link href="/" className="group text-[16px] md:text-[20px] hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
           <ArrowIcon className="rotate-180" /> go back
         </Link>
-        <Link href="/" className="text-[22px] font-normal hover:text-amber transition-colors -m-2 p-2 focus:outline-none">
+        <Link href="/" className="hidden md:flex text-[22px] font-normal hover:text-amber transition-colors -m-2 p-2 focus:outline-none items-center gap-2">
           <AmberDot />
           grisha obolenskiy
         </Link>
-        <SolidButton href="https://t.me/maybellineswag" target="_blank" className="flex items-center gap-[8px]">
-          <TelegramIcon /> get in touch
-        </SolidButton>
+        <div className="flex items-center">
+          <SolidButton href="https://t.me/maybellineswag" target="_blank" className="text-[14px] md:text-[18px] px-[12px] py-[8px] md:px-[18px] md:py-[12px] flex items-center gap-[6px] md:gap-[8px] whitespace-nowrap">
+            <TelegramIcon className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" /> get in touch
+          </SolidButton>
+        </div>
       </header>
 
       <div className="flex flex-col gap-[160px]">

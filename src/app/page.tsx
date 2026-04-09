@@ -94,7 +94,7 @@ export default function Portfolio() {
               grisha obolenskiy
             </div>
             
-            <Reveal className="leading-[1.4] mt-[20px]" stagger={0.15}>
+            <Reveal className="leading-[1.4] mt-[20px]" stagger={0.15} threshold={0}>
               <div>ui ux & product designer</div>
               <div className="flex items-center gap-[8px] inline-flex">
                 based in <Image src={europeIcon} alt="europe" width={32} height={32} /> europe
@@ -103,7 +103,7 @@ export default function Portfolio() {
               <div>fluent in english, russian & czech</div>
             </Reveal>
             
-            <Reveal className="mt-[28px] leading-[1.4] text-left" stagger={0.1} delay={0.4}>
+            <Reveal className="mt-[28px] leading-[1.4] text-left" stagger={0.1} delay={0.4} threshold={0}>
               <div>
                 experience in building
               </div>
@@ -117,7 +117,7 @@ export default function Portfolio() {
               </div>
             </Reveal>
             
-            <Reveal className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-1" stagger={0.1}>
+            <Reveal className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-1" stagger={0.1} threshold={0}>
                <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group -m-2 p-2 w-fit">
                  <TelegramIcon className="text-amber" />
                  <span className="group-hover:text-amber transition-colors">maybellineswag</span>
@@ -128,7 +128,7 @@ export default function Portfolio() {
                </a>
             </Reveal>
 
-            <Reveal className="mt-[28px] leading-[1.4] hidden md:block">
+            <Reveal className="mt-[28px] leading-[1.4] hidden md:block" boxClassName="inline-block">
               past clients:{" "}
               <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">The Weeknd</a>,{" "}
               <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Sp5der</a>,{" "}
@@ -143,7 +143,7 @@ export default function Portfolio() {
             </Reveal>
 
             {/* MOBILE CLIENTS LIST */}
-            <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px]" delay={0.2}>
+            <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px]" delay={0.2} threshold={0}>
               past clients: The Weeknd, Sp5der, PinkPantheress, Nettspend & more
             </Reveal>
 
@@ -165,7 +165,7 @@ export default function Portfolio() {
                      <div className="absolute left-full ml-[12px] flex items-center whitespace-nowrap pointer-events-none group-hover:pointer-events-auto">
                         <div className="overflow-hidden transition-all duration-300 max-w-0 opacity-0 group-hover:max-w-[120px] group-hover:opacity-100 flex items-center">
                           <a 
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=advantagesofkindness@gmail.com" 
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=advantagesofkindness@gmail.com&su=Project+Inquiry&body=Hi+Grisha%2C%0A%0AI+%27m+interested+in+collaborating+on+a+project..." 
                             target="_blank" 
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
@@ -184,13 +184,9 @@ export default function Portfolio() {
                  </div>
             </Reveal>
             
-            <Reveal className="flex items-center justify-start gap-[24px] mt-[32px]" delay={0.8}>
-              <SolidButton href="/works" className="flex items-center gap-[8px] w-[260px] md:w-auto justify-center md:justify-start bg-amber py-[16px] md:py-[12px] rounded-2xl">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-[20px] h-[20px] block md:hidden transition-transform duration-300 group-hover:translate-x-1">
-                  <path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" />
-                </svg>
-                <span className="hidden md:inline"><ArrowIcon /></span>
-                view works
+            <Reveal className="flex items-center justify-start gap-[24px] mt-[32px]" delay={0.8} threshold={0}>
+              <SolidButton href="/works" className="flex items-center gap-[10px] w-full md:w-auto justify-center md:justify-start bg-amber py-[16px] md:py-[12px] rounded-2xl">
+                 <ArrowIcon /> view works
               </SolidButton>
             </Reveal>
           </div>
@@ -292,9 +288,9 @@ export default function Portfolio() {
               my background
             </div>
             
-            <div className="mt-[20px] flex flex-col gap-[6px] items-center md:items-start">
+            <Reveal className="mt-[20px] flex flex-col gap-[6px] items-start" stagger={0.1}>
               <div className="text-[18px] leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> i have a background in merch, cover art & general graphic design for various music artists & clothing brands</div>
-              <div className="text-[18px] leading-[1.4]">
+              <div className="text-[18px] leading-[1.4]" >
                 <ArrowIcon className="inline-block mr-[8px] align-middle" /> 
                 some of my past clients are{" "}
                 <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors">The Weeknd</a>,{" "}
@@ -309,7 +305,7 @@ export default function Portfolio() {
                 <a href="https://www.instagram.com/untiljapan/" target="_blank" className="hover:text-amber transition-colors">Untiljapan</a>,{" "}
                 <a href="https://www.instagram.com/seventhheaven/" target="_blank" className="hover:text-amber transition-colors">Seventh Heaven</a> & more
               </div>
-            </div>
+            </Reveal>
             
             <div className="mt-[28px]">
               <SolidButton href="/works" className="flex items-center gap-[10px]">
