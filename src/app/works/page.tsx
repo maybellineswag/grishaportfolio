@@ -113,7 +113,13 @@ const ProjectImages = ({ images }: { images: any[] }) => (
 const TechIcons = ({ icons }: { icons: any[] }) => (
   <div className="flex items-center gap-[12px] mt-[16px] mb-[24px]">
     {icons.map((IconProps, i) => (
-      <Image key={i} src={IconProps.src} alt="tech icon" height={26} className="h-[26px] w-auto object-contain" />
+      <Image 
+        key={i} 
+        src={IconProps.src} 
+        alt="tech icon" 
+        height={26} 
+        className="h-[26px] w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-default" 
+      />
     ))}
   </div>
 );
@@ -164,10 +170,6 @@ export default function Works() {
       <header className="flex items-center justify-between sticky top-0 bg-white/80 backdrop-blur-md py-[12px] md:py-[20px] z-50 mb-[40px] -mx-6 px-6 md:mx-0 md:px-0 border-b border-black/[0.03]">
         <Link href="/" className="group text-[16px] md:text-[20px] hover:text-amber transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
           <ArrowIcon className="rotate-180" /> go back
-        </Link>
-        <Link href="/" className="hidden md:flex text-[22px] font-normal hover:text-amber transition-colors -m-2 p-2 focus:outline-none items-center gap-2">
-          <AmberDot />
-          grisha obolenskiy
         </Link>
         <div className="flex items-center">
           <SolidButton href="https://t.me/maybellineswag" target="_blank" className="text-[14px] md:text-[18px] px-[12px] py-[8px] md:px-[18px] md:py-[12px] flex items-center gap-[6px] md:gap-[8px] whitespace-nowrap">

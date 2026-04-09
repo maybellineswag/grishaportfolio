@@ -25,6 +25,9 @@ const appleGaramond = localFont({
 export const metadata: Metadata = {
   title: 'grisha obolenskiy — ui/ux & product designer',
   description: 'ui ux & product designer based in europe. open to remote & on-site roles.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

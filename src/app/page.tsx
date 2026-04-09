@@ -74,7 +74,7 @@ export default function Portfolio() {
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[80px] pb-[100px] flex flex-col text-[#111111] text-[19px] leading-[1.3] tracking-[-0.03em]">
       
       {/* HERO WRAPPER TO TAKE FULL SCREEN */}
-      <div className="h-[calc(100vh-40px)] flex flex-col justify-between relative">
+      <div className="h-[calc(100vh-40px)] flex flex-col justify-center md:justify-between relative">
         {/* SECTION 1: HERO */}
         <FadeInSection>
           <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
@@ -129,11 +129,15 @@ export default function Portfolio() {
             </Reveal>
 
             <Reveal className="mt-[28px] leading-[1.4] hidden md:block" boxClassName="inline-block">
-              past clients:{" "}
-              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">The Weeknd</a>,{" "}
-              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Sp5der</a>,{" "}
-              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">PinkPantheress</a>,{" "}
-              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Nettspend</a>{" "}&{" "}
+              <span>past clients: </span>
+              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">The Weeknd</a>
+              <span>, </span>
+              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Sp5der</a>
+              <span>, </span>
+              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">PinkPantheress</a>
+              <span>, </span>
+              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Nettspend</a>
+              <span> & </span>
               <button 
                 onClick={() => lenis?.scrollTo('#background', { duration: 2 })}
                 className="hover:text-amber transition-colors cursor-pointer -m-2 p-2"
@@ -147,14 +151,14 @@ export default function Portfolio() {
               past clients: The Weeknd, Sp5der, PinkPantheress, Nettspend & more
             </Reveal>
 
-            <Reveal className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-[4px] text-[#888888]" stagger={0.05} delay={0.6}>
-               <div className="flex items-center gap-[8px] group cursor-pointer -m-2 p-2">
+            <Reveal className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-[4px] text-[#888888]" stagger={0.1} delay={1.2}>
+               <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer" className="flex items-center gap-[8px] group -m-2 p-2 w-fit">
                  <TelegramIcon className="text-amber" /> 
                  <div className="text-[#111111] group-hover:text-amber transition-colors">
-                   <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer">@maybellineswag</a>
+                    @maybellineswag
                  </div>
-               </div>
-                 <div className="flex items-center gap-[8px] group cursor-pointer -m-2 p-2 select-none" onClick={handleCopyEmail}>
+               </a>
+               <div className="flex items-center gap-[8px] group cursor-pointer -m-2 p-2 select-none w-fit" onClick={handleCopyEmail}>
                    <MailIcon className="text-amber" /> 
                    <div className="flex items-center relative">
                      <span className="text-[#111111] hover:text-amber transition-colors">
@@ -165,7 +169,7 @@ export default function Portfolio() {
                      <div className="absolute left-full ml-[12px] flex items-center whitespace-nowrap pointer-events-none group-hover:pointer-events-auto">
                         <div className="overflow-hidden transition-all duration-300 max-w-0 opacity-0 group-hover:max-w-[120px] group-hover:opacity-100 flex items-center">
                           <a 
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=advantagesofkindness@gmail.com&su=Project+Inquiry&body=Hi+Grisha%2C%0A%0AI+%27m+interested+in+collaborating+on+a+project..." 
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=advantagesofkindness@gmail.com&su=We+searched+the+whole+internet+and+found+you&body=Hello+Grisha%2C%0A%0AWe+came+across+your+work+and+honestly+we+weren%27t+expecting+to+be+this+impressed.+We+have+an+open+position+/+project+that+feels+like+it+was+made+for+you+%E2%80%94+good+pay%2C+interesting+work%2C+and+people+who+actually+have+taste.%0AWould+love+to+get+on+a+call+and+tell+you+more.%0A%0ALooking+forward+to+hearing+from+you+Grisha%21" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
@@ -183,8 +187,9 @@ export default function Portfolio() {
                    </div>
                  </div>
             </Reveal>
+
             
-            <Reveal className="flex items-center justify-start gap-[24px] mt-[32px]" delay={0.8} threshold={0}>
+            <Reveal className="flex items-center justify-start gap-[24px] mt-[32px]" delay={1.8} threshold={0}>
               <SolidButton href="/works" className="flex items-center gap-[10px] w-full md:w-auto justify-center md:justify-start bg-amber py-[16px] md:py-[12px] rounded-2xl">
                  <ArrowIcon /> view works
               </SolidButton>

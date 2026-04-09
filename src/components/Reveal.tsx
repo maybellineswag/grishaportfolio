@@ -20,7 +20,7 @@ export const Reveal = ({
   boxClassName = "block",
   delay = 0,
   stagger = 0.1,
-  threshold = 0.1
+  threshold = 0.05
 }: RevealProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: threshold });
@@ -51,7 +51,7 @@ export const Reveal = ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.8,
         ease: [0.22, 1, 0.36, 1], // Luxury cubic-bezier
       },
     },
