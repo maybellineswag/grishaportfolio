@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { SmoothScroll } from '@/components/SmoothScroll';
+import ClickSpark from '@/components/ClickSpark';
 import './globals.css';
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -34,9 +35,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={`${sfPro.variable} ${appleGaramond.variable} antialiased`}>
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        <ClickSpark
+          sparkColor='#000'
+          sparkSize={10}
+          sparkRadius={15}
+          sparkCount={8}
+          duration={400}
+        >
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+        </ClickSpark>
       </body>
     </html>
   );

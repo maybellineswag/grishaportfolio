@@ -37,7 +37,7 @@ const ArrowIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const SolidButton = ({ children, className = "", href, target }: { children: React.ReactNode, className?: string, href?: string, target?: string }) => {
-  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-[6px] px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-all duration-300 ${className}`;
+  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-2xl px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-all duration-300 ${className}`;
   const content = (
     <span className="flex items-center gap-[8px]">
       {children}
@@ -122,13 +122,13 @@ export default function Portfolio() {
 
             <p className="mt-[28px] leading-[1.4] hidden md:block">
               past clients: 
-              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors"> The Weeknd</a>, 
-              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors"> Sp5der</a>,<br />
-              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors"> PinkPantheress</a>, 
-              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors"> Nettspend</a> &{" "}
+              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> The Weeknd</a>, 
+              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> Sp5der</a>,<br />
+              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> PinkPantheress</a>, 
+              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> Nettspend</a> &{" "}
               <button 
                 onClick={() => lenis?.scrollTo('#background', { duration: 2 })}
-                className="hover:text-amber transition-colors cursor-pointer"
+                className="hover:text-amber transition-colors cursor-pointer -m-2 p-2"
               >
                 more
               </button>
@@ -177,7 +177,7 @@ export default function Portfolio() {
             </div>
             
             <div className="flex items-center justify-start gap-[24px] mt-[32px]">
-              <SolidButton href="/works" className="flex items-center gap-[8px] w-[260px] md:w-auto justify-center md:justify-start bg-amber py-[16px] md:py-[12px]">
+              <SolidButton href="/works" className="flex items-center gap-[8px] w-[260px] md:w-auto justify-center md:justify-start bg-amber py-[16px] md:py-[12px] rounded-2xl">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-[20px] h-[20px] block md:hidden transition-transform duration-300 group-hover:translate-x-1">
                   <path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" />
                 </svg>

@@ -81,7 +81,7 @@ const AmberDot = () => (
 );
 
 const SolidButton = ({ children, className = "", href, target }: { children: React.ReactNode, className?: string, href?: string, target?: string }) => {
-  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-[6px] px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-all duration-300 ${className}`;
+  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-2xl px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-all duration-300 ${className}`;
   const content = (
     <span className="flex items-center gap-[8px]">
       {children}
@@ -135,10 +135,12 @@ const Colors = ({ colors }: { colors: string[] }) => {
             <div 
               key={i} 
               onClick={() => handleCopy(c)}
-              className={`w-[24px] h-[24px] rounded-full border cursor-pointer hover:scale-110 transition-transform ${isWhite ? 'border-black/10' : 'border-white'}`} 
+              className={`w-[24px] h-[24px] rounded-full border cursor-pointer hover:scale-110 transition-transform ${isWhite ? 'border-black/10' : 'border-white'} relative group/color`} 
               style={{ backgroundColor: c, zIndex: colors.length - i }} 
               title={`Click to copy ${c}`}
-            />
+            >
+              <div className="absolute -inset-2 rounded-full cursor-pointer" />
+            </div>
           );
         })}
       </div>
@@ -181,7 +183,9 @@ export default function Works() {
             <Image src={magnoliaLogo} alt="Magnolia" className="h-[24px] w-auto object-contain mb-[8px]" />
             <div className="text-[22px]">luxury car import agency</div>
             <Colors colors={['#403864', '#8781A1', '#D2CEE2']} />
-            <div className="text-[20px] mb-[8px] flex items-center gap-[8px]"><ArrowIcon /> full product design & dev, UX & branding</div>
+            <div className="text-[20px] mb-[8px] flex items-center gap-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}>
+              <ArrowIcon /> full product design & dev, UX & branding
+            </div>
             <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: geminiIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}]} />
             <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
               "How do we eliminate the stigma of used vehicles from Japan to European customers?"
