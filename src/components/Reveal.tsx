@@ -49,7 +49,7 @@ export const Reveal = ({
         ease: [0.22, 1, 0.36, 1], // Luxury cubic-bezier
       },
     },
-  };
+  } as const;
 
   // If children is already an array, treat them as items to stagger
   // If it's a single item (like a paragraph), we might want to split it by lines manually
