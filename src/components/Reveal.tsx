@@ -19,12 +19,14 @@ export const Reveal = ({
   stagger = 0.1 
 }: RevealProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
   const mainControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
+    } else {
+      mainControls.start("hidden"); // Optional: ensure it can reset
     }
   }, [isInView, mainControls]);
 
@@ -40,7 +42,7 @@ export const Reveal = ({
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,

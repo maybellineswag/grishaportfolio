@@ -117,36 +117,37 @@ export default function Portfolio() {
               </div>
             </Reveal>
             
-            <div className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-1">
-               <div className="flex items-center gap-2">
-                 <span>maybellineswag</span>
-               </div>
-               <div className="flex items-center gap-2">
+            <Reveal className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-1" stagger={0.1}>
+               <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group -m-2 p-2 w-fit">
+                 <TelegramIcon className="text-amber" />
+                 <span className="group-hover:text-amber transition-colors">maybellineswag</span>
+               </a>
+               <a href="mailto:advantagesofkindness@gmail.com" className="flex items-center gap-2 group -m-2 p-2 w-fit">
                  <MailIcon className="text-amber" />
-                 <span>advantagesofkindness@gmail.com</span>
-               </div>
-            </div>
+                 <span className="group-hover:text-amber transition-colors">advantagesofkindness@gmail.com</span>
+               </a>
+            </Reveal>
 
-            <p className="mt-[28px] leading-[1.4] hidden md:block">
-              past clients: 
-              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> The Weeknd</a>, 
-              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> Sp5der</a>,<br />
-              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> PinkPantheress</a>, 
-              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block"> Nettspend</a> &{" "}
+            <Reveal className="mt-[28px] leading-[1.4] hidden md:block">
+              past clients:{" "}
+              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">The Weeknd</a>,{" "}
+              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Sp5der</a>,{" "}
+              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">PinkPantheress</a>,{" "}
+              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Nettspend</a>{" "}&{" "}
               <button 
                 onClick={() => lenis?.scrollTo('#background', { duration: 2 })}
                 className="hover:text-amber transition-colors cursor-pointer -m-2 p-2"
               >
                 more
               </button>
-            </p>
+            </Reveal>
 
             {/* MOBILE CLIENTS LIST */}
-            <p className="mt-[28px] leading-[1.4] block md:hidden text-[16px]">
+            <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px]" delay={0.2}>
               past clients: The Weeknd, Sp5der, PinkPantheress, Nettspend & more
-            </p>
+            </Reveal>
 
-            <div className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-[4px] text-[#888888]">
+            <Reveal className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-[4px] text-[#888888]" stagger={0.05} delay={0.6}>
                <div className="flex items-center gap-[8px] group cursor-pointer -m-2 p-2">
                  <TelegramIcon className="text-amber" /> 
                  <div className="text-[#111111] group-hover:text-amber transition-colors">
@@ -181,9 +182,9 @@ export default function Portfolio() {
                      </div>
                    </div>
                  </div>
-            </div>
+            </Reveal>
             
-            <div className="flex items-center justify-start gap-[24px] mt-[32px]">
+            <Reveal className="flex items-center justify-start gap-[24px] mt-[32px]" delay={0.8}>
               <SolidButton href="/works" className="flex items-center gap-[8px] w-[260px] md:w-auto justify-center md:justify-start bg-amber py-[16px] md:py-[12px] rounded-2xl">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-[20px] h-[20px] block md:hidden transition-transform duration-300 group-hover:translate-x-1">
                   <path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" />
@@ -191,7 +192,7 @@ export default function Portfolio() {
                 <span className="hidden md:inline"><ArrowIcon /></span>
                 view works
               </SolidButton>
-            </div>
+            </Reveal>
           </div>
         </section>
         </FadeInSection>
@@ -208,7 +209,7 @@ export default function Portfolio() {
       <div className="flex flex-col gap-[80px] md:gap-[140px]">
         {/* SECTION 2: HOW I WORK */}
         <FadeInSection>
-          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-center md:items-start text-center md:text-left">
+          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
           <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
             <Image
               src={howIWorkImg}
@@ -242,7 +243,7 @@ export default function Portfolio() {
 
         {/* SECTION 3: NOTION */}
         <FadeInSection>
-          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-center md:items-start text-center md:text-left">
+          <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
           <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
             <Image
               src={notionImg}
@@ -275,7 +276,7 @@ export default function Portfolio() {
 
         {/* SECTION 4: BACKGROUND */}
         <FadeInSection>
-          <section id="background" className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-center md:items-start text-center md:text-left">
+          <section id="background" className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
           <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
             <Image
               src={merchImg}

@@ -161,7 +161,7 @@ export default function Works() {
   return (
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
       
-      <header className="flex items-center justify-between sticky top-0 bg-white py-[20px] z-50 mb-[40px]">
+      <header className="flex items-center justify-between sticky top-0 bg-gradient-to-b from-white via-white to-transparent py-[20px] z-50 mb-[40px] px-2 md:-mx-2">
         <Link href="/" className="group text-[20px] hover:text-amber transition-colors flex items-center gap-[8px] -m-2 p-2 focus:outline-none">
           <ArrowIcon className="rotate-180" /> go back
         </Link>
