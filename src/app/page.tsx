@@ -147,7 +147,7 @@ export default function Portfolio() {
             </Reveal>
 
             {/* MOBILE CLIENTS LIST */}
-            <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px]" delay={0.2} threshold={0}>
+            <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px]" boxClassName="inline-block mr-[0.22em]" delay={0.2} threshold={0}>
               <span>past clients: </span>
               <a href="https://www.instagram.com/theweeknd/" target="_blank" className="animate-wiggle hover:text-amber transition-colors inline-block" style={{ animationDelay: '0s' }}>The Weeknd</a>
               <span>, </span>
