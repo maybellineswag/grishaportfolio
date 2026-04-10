@@ -38,7 +38,7 @@ const ArrowIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const SolidButton = ({ children, className = "", href, target }: { children: React.ReactNode, className?: string, href?: string, target?: string }) => {
-  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-2xl px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-all duration-300 ${className}`;
+  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-2xl px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-transform duration-300 ${className}`;
   const content = (
     <span className="flex items-center gap-[8px]">
       {children}
@@ -89,10 +89,10 @@ export default function Portfolio() {
                </div>
             </div>
              <div className="w-full md:w-[440px]">
-            <div className="text-[23px] font-normal leading-[1.4]">
+            <h1 className="text-[23px] font-normal leading-[1.4] m-0">
               <AmberDot />
               grisha obolenskiy
-            </div>
+            </h1>
             
             <Reveal className="leading-[1.4] mt-[20px]" stagger={0.15} threshold={0}>
               <div>ui ux & product designer</div>
@@ -108,7 +108,7 @@ export default function Portfolio() {
                 experience in building
               </div>
               <div>
-                <Link href="/works" className="group underline font-serif italic text-black tracking-normal hover:text-amber transition-colors inline-flex items-center gap-[4px] -m-2 p-2">
+                <Link href="/works" className="animate-wiggle group underline font-serif italic text-black tracking-normal hover:text-amber transition-colors inline-flex items-center gap-[4px] -m-2 p-2" style={{ animationDelay: '0.5s' }}>
                   real websites
                 </Link> across <span className="text-amber">multiple industries</span> focusing on
               </div>
@@ -130,17 +130,17 @@ export default function Portfolio() {
 
             <Reveal className="mt-[28px] leading-[1.4] hidden md:block" boxClassName="inline-block mr-[0.22em]">
               <span>past clients: </span>
-              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">The Weeknd</a>
+              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="animate-wiggle hover:text-amber transition-colors -m-2 p-2 inline-block" style={{ animationDelay: '0s' }}>The Weeknd</a>
               <span>, </span>
-              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Sp5der</a>
+              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="animate-wiggle hover:text-amber transition-colors -m-2 p-2 inline-block" style={{ animationDelay: '1.2s' }}>Sp5der</a>
               <span>, </span>
-              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">PinkPantheress</a>
+              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="animate-wiggle hover:text-amber transition-colors -m-2 p-2 inline-block" style={{ animationDelay: '2.4s' }}>PinkPantheress</a>
               <span>, </span>
-              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors -m-2 p-2 inline-block">Nettspend</a>
+              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="animate-wiggle hover:text-amber transition-colors -m-2 p-2 inline-block" style={{ animationDelay: '3.6s' }}>Nettspend</a>
               <span> & </span>
               <button 
                 onClick={() => lenis?.scrollTo('#background', { duration: 2 })}
-                className="hover:text-amber transition-colors cursor-pointer -m-2 p-2"
+                className="animate-wiggle hover:text-amber transition-colors cursor-pointer -m-2 p-2" style={{ animationDelay: '4.8s' }}
               >
                 more
               </button>
@@ -217,14 +217,14 @@ export default function Portfolio() {
           </FadeInSection>
           <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
             <Reveal className="flex flex-col gap-[10px] items-center md:items-start" stagger={0.18} duration={2.5}>
-              <div className="text-[23px] font-normal leading-tight w-full">
+              <div className="text-[23px] font-normal leading-tight w-full mb-[16px]">
                 <AmberDot />how i work
               </div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> understand the business problem &amp; define what the site needs to achieve</div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> design full layout, components &amp; visual system in Figma</div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> build it in code using modern frameworks — pixel perfect to the design</div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> handle SEO basics, performance &amp; deployment so it&apos;s ready to go live</div>
-              <div className="mt-[18px]">
+              <div className="mt-[28px]">
                 <SolidButton href="/works" className="flex items-center gap-[8px]">
                   <ArrowIcon /> view works
                 </SolidButton>
@@ -242,13 +242,13 @@ export default function Portfolio() {
           </FadeInSection>
           <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
             <Reveal className="flex flex-col gap-[10px] items-center md:items-start" stagger={0.18} duration={2.5}>
-              <div className="text-[23px] font-normal leading-tight w-full">
+              <div className="text-[23px] font-normal leading-tight w-full mb-[16px]">
                 <AmberDot />every project lives in notion
               </div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> each section / page grouped</div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> tasks ranked by difficulty, assignee, due date, etc</div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> nothing slips through the cracks</div>
-              <div className="mt-[18px]">
+              <div className="mt-[28px]">
                 <SolidButton href="https://t.me/maybellineswag" target="_blank" className="flex items-center gap-[10px]">
                   <TelegramIcon /> contact me
                 </SolidButton>
@@ -266,26 +266,26 @@ export default function Portfolio() {
           </FadeInSection>
           <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
             <Reveal className="flex flex-col gap-[10px] items-start" stagger={0.18} duration={2.5}>
-              <div className="text-[23px] font-normal leading-tight w-full">
+              <div className="text-[23px] font-normal leading-tight w-full mb-[16px]">
                 <AmberDot />my background
               </div>
               <div className="text-[18px] leading-[1.4] w-full"><ArrowIcon className="inline-block mr-[8px] align-middle" /> i have a background in merch, cover art &amp; general graphic design for various music artists &amp; clothing brands</div>
               <div className="text-[18px] leading-[1.4] w-full">
                 <ArrowIcon className="inline-block mr-[8px] align-middle" />{" "}
                 some of my past clients are{" "}
-                <a href="https://www.instagram.com/theweeknd/" target="_blank" className="hover:text-amber transition-colors">The Weeknd</a>,{" "}
-                <a href="https://www.instagram.com/skyrompiendo/" target="_blank" className="hover:text-amber transition-colors">Sky Rompiendo</a>,{" "}
-                <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="hover:text-amber transition-colors">Sp5der Worldwide</a>,{" "}
-                <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="hover:text-amber transition-colors">PinkPantheress</a>,{" "}
-                <a href="https://www.instagram.com/krisrofficial/" target="_blank" className="hover:text-amber transition-colors">Kris R</a>,{" "}
-                <a href="https://www.instagram.com/nettspend_/" target="_blank" className="hover:text-amber transition-colors">Nettspend</a>,{" "}
-                <a href="https://www.instagram.com/sahbabii/" target="_blank" className="hover:text-amber transition-colors">Sahbabii</a>,{" "}
-                <a href="https://www.instagram.com/mollysantana00/" target="_blank" className="hover:text-amber transition-colors">Molly Santana</a>,{" "}
-                <a href="https://www.instagram.com/maluma/" target="_blank" className="hover:text-amber transition-colors">Maluma</a>,{" "}
-                <a href="https://www.instagram.com/untiljapan/" target="_blank" className="hover:text-amber transition-colors">Untiljapan</a>,{" "}
-                <a href="https://www.instagram.com/seventhheaven/" target="_blank" className="hover:text-amber transition-colors">Seventh Heaven</a> &amp; more
+                <a href="https://www.instagram.com/theweeknd/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '0s' }}>The Weeknd</a>,{" "}
+                <a href="https://www.instagram.com/skyrompiendo/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '0.8s' }}>Sky Rompiendo</a>,{" "}
+                <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '1.6s' }}>Sp5der Worldwide</a>,{" "}
+                <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '2.4s' }}>PinkPantheress</a>,{" "}
+                <a href="https://www.instagram.com/krisrofficial/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '3.2s' }}>Kris R</a>,{" "}
+                <a href="https://www.instagram.com/nettspend_/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '4.0s' }}>Nettspend</a>,{" "}
+                <a href="https://www.instagram.com/sahbabii/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '4.8s' }}>Sahbabii</a>,{" "}
+                <a href="https://www.instagram.com/mollysantana00/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '5.6s' }}>Molly Santana</a>,{" "}
+                <a href="https://www.instagram.com/maluma/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '6.4s' }}>Maluma</a>,{" "}
+                <a href="https://www.instagram.com/untiljapan/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '7.2s' }}>Untiljapan</a>,{" "}
+                <a href="https://www.instagram.com/seventhheaven/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '8.0s' }}>Seventh Heaven</a> &amp; more
               </div>
-              <div className="mt-[18px]">
+              <div className="mt-[28px]">
                 <SolidButton href="/works" className="flex items-center gap-[10px]">
                   <ArrowIcon /> view works
                 </SolidButton>

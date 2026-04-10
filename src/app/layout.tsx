@@ -28,6 +28,28 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+  openGraph: {
+    title: 'grisha obolenskiy — ui/ux & product designer',
+    description: 'ui ux & product designer based in europe. open to remote & on-site roles.',
+    url: 'https://grishaobolenskiy.com',
+    siteName: 'Grisha Obolenskiy',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Grisha Obolenskiy Portfolio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'grisha obolenskiy — ui/ux & product designer',
+    description: 'ui ux & product designer based in europe. open to remote & on-site roles.',
+    images: ['/opengraph-image.png'],
+  },
 };
 
 export default function RootLayout({

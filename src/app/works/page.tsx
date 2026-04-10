@@ -33,9 +33,9 @@ import monoLogo from '../../../assetsworks/mono.svg';
 import capenciImg from '../../../assetsworks/capenci.png';
 import capenciLogo from '../../../assetsworks/capenci.svg';
 
-// === AEROFORM ===
-import aeroformImg from '../../../assetsworks/aeroform.png';
-import aeroformLogo from '../../../assetsworks/aeroform.svg';
+// === DECOLAB ===
+import aeroformImg from '../../../assetsworks/decolab.png';
+import aeroformLogo from '../../../assetsworks/decolab.svg';
 
 // === AVS AUTO ===
 import avsImg from '../../../assetsworks/avsauto.png';
@@ -82,7 +82,7 @@ const AmberDot = () => (
 );
 
 const SolidButton = ({ children, className = "", href, target }: { children: React.ReactNode, className?: string, href?: string, target?: string }) => {
-  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-2xl px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-all duration-300 ${className}`;
+  const commonClasses = `group inline-flex bg-amber text-[#111111] rounded-2xl px-[18px] py-[12px] text-[18px] font-normal leading-none cursor-pointer overflow-hidden hover:-translate-y-[2px] transition-transform duration-300 ${className}`;
   const content = (
     <span className="flex items-center gap-[8px]">
       {children}
@@ -102,9 +102,16 @@ const ProjectImages = ({ images }: { images: any[] }) => (
     {images.map((img, idx) => (
       <div
         key={idx}
-        className="overflow-hidden hover:blur-none cursor-pointer group"
+        className="overflow-hidden cursor-pointer group"
       >
-        <Image src={img} alt="project image" className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.01]" />
+        <Image 
+          src={img} 
+          alt={`project showcase ${idx + 1}`} 
+          className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.01]" 
+          placeholder="blur"
+          sizes="(max-width: 768px) 100vw, 640px"
+          quality={85}
+        />
       </div>
     ))}
   </div>
@@ -177,20 +184,27 @@ export default function Works() {
   return (
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
       
-      {/* Go Back: fixed + mix-blend-difference. Must be OUTSIDE sticky stacking context to blend against page content */}
-      <div className="fixed top-0 left-0 right-0 pointer-events-none py-[12px] md:py-[20px]" style={{ zIndex: 9999, mixBlendMode: 'difference' }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-[60px]">
-          <Link href="/" className="pointer-events-auto group text-[16px] md:text-[20px] text-white hover:opacity-80 transition-opacity flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
+      {/* Go Back: fixed + mix-blend-difference, with top padding */}
+      <div className="fixed top-0 left-0 right-0 pointer-events-none pt-[12px] md:pt-[20px]" style={{ zIndex: 9999, mixBlendMode: 'difference' }}>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-[60px] h-[48px] flex items-center">
+          <Link href="/" className="pointer-events-auto group text-[16px] md:text-[20px] text-white transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
             <ArrowIcon className="rotate-180" /> go back
           </Link>
         </div>
       </div>
 
-      {/* Button only: sticky header */}
-      <div className="sticky top-0 z-[9998] py-[12px] md:py-[20px] mb-[40px] -mx-6 px-6 md:mx-0 md:px-0 flex justify-end">
-        <SolidButton href="https://t.me/maybellineswag" target="_blank" className="text-[14px] md:text-[18px] px-[12px] py-[8px] md:px-[18px] md:py-[12px] flex items-center gap-[6px] md:gap-[8px] whitespace-nowrap">
-          <TelegramIcon className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" /> get in touch
-        </SolidButton>
+      {/* Get in Touch: fixed at same position — pt + h-[48px] matches Go Back exactly */}
+      <div className="fixed top-0 left-0 right-0 pointer-events-none pt-[12px] md:pt-[20px]" style={{ zIndex: 9998, height: 'auto' }}>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-[60px] h-[48px] flex items-center justify-end">
+          <SolidButton href="https://t.me/maybellineswag" target="_blank" className="pointer-events-auto text-[14px] md:text-[18px] px-[12px] py-[8px] md:px-[18px] md:py-[12px] flex items-center gap-[6px] md:gap-[8px] whitespace-nowrap">
+            <TelegramIcon className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" /> get in touch
+          </SolidButton>
+        </div>
+      </div>
+
+      {/* Spacer: pt-[12px]+h-[48px]+mb-[40px] matches fixed header footprint */}
+      <div className="pt-[12px] md:pt-[20px] mb-[40px]" aria-hidden="true">
+        <div style={{ height: '48px' }} />
       </div>
 
       <div className="flex flex-col gap-[160px]">
@@ -205,7 +219,7 @@ export default function Works() {
                 <Image src={magnoliaLogo} alt="Magnolia" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
                 <div className="text-[22px]">luxury car import agency</div>
                 <Colors colors={['#403864', '#8781A1', '#D2CEE2']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-                <div className="text-[20px] mb-[8px] flex items-start gap-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}><ArrowIcon /> full product design &amp; dev, UX &amp; branding</div>
+                <div className="text-[20px] mb-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}><ArrowIcon className="inline-block mr-[8px] align-middle" /> full product design &amp; dev, UX &amp; branding</div>
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: geminiIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}]} />
                 <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">"How do we eliminate the stigma of used vehicles from Japan to European customers?"</div>
                 <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
@@ -222,7 +236,7 @@ export default function Works() {
                 <Image src={magnoliaLogo} alt="Magnolia" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
                 <div className="text-[22px]">luxury car import agency</div>
                 <Colors colors={['#403864', '#8781A1', '#D2CEE2']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-                <div className="text-[20px] mb-[8px] flex items-start gap-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}><ArrowIcon /> full product design &amp; dev, UX &amp; branding</div>
+                <div className="text-[20px] mb-[8px] -m-2 p-2 group cursor-pointer" onClick={() => handleCopy('#403864')}><ArrowIcon className="inline-block mr-[8px] align-middle" /> full product design &amp; dev, UX &amp; branding</div>
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: geminiIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}]} />
                 <div className="text-[20px] italic font-serif text-gray-800">"How do we eliminate the stigma of used vehicles from Japan to European customers?"</div>
               </div>
@@ -248,7 +262,7 @@ export default function Works() {
                 <Image src={genneroLogo} alt="Gennero" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
                 <div className="text-[22px]">modern gynaecology &amp; cosmetology</div>
                 <Colors colors={['#112250', '#8FB3D4', '#EFD2DC']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-                <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> full product design &amp; dev, UX &amp; booking system integration</div>
+                <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> full product design &amp; dev, UX &amp; booking system integration</div>
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}, {src: altegioIcon}]} />
                 <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">"How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"</div>
                 <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
@@ -266,7 +280,7 @@ export default function Works() {
                 <Image src={genneroLogo} alt="Gennero" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
                 <div className="text-[22px]">modern gynaecology &amp; cosmetology</div>
                 <Colors colors={['#112250', '#8FB3D4', '#EFD2DC']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-                <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> full product design &amp; dev, UX &amp; booking system integration</div>
+                <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> full product design &amp; dev, UX &amp; booking system integration</div>
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}, {src: altegioIcon}]} />
                 <div className="text-[20px] italic font-serif text-gray-800">"How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"</div>
               </div>
@@ -292,7 +306,7 @@ export default function Works() {
                 <Image src={dimensionLogo} alt="Dimension" className="h-[32px] w-auto object-contain mb-[8px]" />
                 <div className="text-[22px]">ai saas for tiktok shop</div>
                 <Colors colors={['#FF5401', '#EF9F39', '#C1C5B4', '#C1C5B4']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-                <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> branding &amp; assets</div>
+                <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> branding &amp; assets</div>
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}]} />
                 <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">"How do we build a brand identity premium enough to sell an AI product to serious e-commerce businesses as a verified TikTok partner?"</div>
                 <Reveal className="flex flex-col gap-[20px] text-[18px] text-gray-700 leading-[1.4]" stagger={0.08} duration={2.5}>
@@ -308,7 +322,7 @@ export default function Works() {
                 <Image src={dimensionLogo} alt="Dimension" className="h-[32px] w-auto object-contain mb-[8px]" />
                 <div className="text-[22px]">ai saas for tiktok shop</div>
                 <Colors colors={['#FF5401', '#EF9F39', '#C1C5B4', '#C1C5B4']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-                <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> branding &amp; assets</div>
+                <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> branding &amp; assets</div>
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}]} />
                 <div className="text-[20px] italic font-serif text-gray-800">"How do we build a brand identity premium enough to sell an AI product to serious e-commerce businesses as a verified TikTok partner?"</div>
               </div>
@@ -331,7 +345,7 @@ export default function Works() {
               <Image src={monoLogo} alt="Mono" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
               <div className="text-[22px]">premium tuning & vehicle customisation</div>
               <Colors colors={['#000000', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-              <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
+              <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
                 "How do we translate a world-class Instagram presence into a product that converts high-end tuning clients?"
@@ -350,7 +364,7 @@ export default function Works() {
               <Image src={capenciLogo} alt="Capenci" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
               <div className="text-[22px]">premium streetwear clothing label</div>
               <Colors colors={['#0D0701', '#362217', '#CD9F89', '#E6E6E4']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-              <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> UI concept & product design</div>
+              <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> UI concept & product design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
                 "How do we turn a product page into an editorial experience that makes customers feel the brand before they buy?"
@@ -360,16 +374,16 @@ export default function Works() {
         </section>
         </FadeInSection>
         
-        {/* AEROFORM */}
+        {/* DECOLAB */}
         <FadeInSection>
           <section className="flex flex-col md:flex-row gap-8 md:gap-[100px] items-start">
           <ProjectImages images={[aeroformImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
             <Reveal stagger={0.08} duration={2.5}>
-              <Image src={aeroformLogo} alt="Aeroform" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
-              <div className="text-[22px]">industrial-grade sewing company</div>
+              <Image src={aeroformLogo} alt="Decolab" className="h-[24px] md:h-[30px] w-auto object-contain mb-[2px] md:mb-[8px]" />
+              <div className="text-[22px]">interior design studio</div>
               <Colors colors={['#112250', '#5D6B84', '#AAB4C0', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-              <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
+              <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> UI/UX concept &amp; hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
                  "How do we make a manufacturer look credible and professional to the partners and clients that matter?"
@@ -390,7 +404,7 @@ export default function Works() {
               <Image src={avsLogo} alt="AVS Auto" className="h-[18px] md:h-[24px] w-auto object-contain mb-[8px]" />
               <div className="text-[16px] md:text-[22px]">premium car dealership</div>
               <Colors colors={['#000000', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-              <div className="text-[14px] md:text-[20px] mb-[8px] flex items-start gap-[4px] md:gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
+              <div className="text-[14px] md:text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[14px] md:text-[20px] italic font-serif mb-[20px] md:mb-[32px] text-gray-800 leading-tight">
                  "How do we design the most premium used car dealership product in Prague — one that matches the quality of the inventory?"
@@ -406,10 +420,10 @@ export default function Works() {
           <ProjectImages images={[wowflowImg]} />
           <div className="flex-1 w-full md:max-w-[540px] md:sticky md:top-[140px]">
             <Reveal stagger={0.1} duration={2.5}>
-              <Image src={wowflowLogo} alt="Wow Flow" className="h-[32px] w-auto object-contain mb-[8px]" />
+              <Image src={wowflowLogo} alt="Wow Flow" className="h-[16px] w-auto object-contain mb-[8px]" />
               <div className="text-[22px]">flowers, alcohol & gift shop</div>
               <Colors colors={['#DFAE92', '#C5B4A2', '#4F571D', '#FFFFFF']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-              <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
+              <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
                  "How do we communicate that this isn't just a flower shop — it's a one-stop gifting destination?"
@@ -428,7 +442,7 @@ export default function Works() {
               <Image src={carsewingLogo} alt="Car Sewing" className="h-[24px] w-auto object-contain mb-[2px] md:mb-[8px]" />
               <div className="text-[22px]">interior upholstery studio</div>
               <Colors colors={['#FBA902', '#000000']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-              <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
+              <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
                  "How do we redesign a craft-based automotive service to feel as premium as the interiors they produce?"
@@ -447,7 +461,7 @@ export default function Works() {
               <Image src={vonavkaLogo} alt="Vonavka" className="h-[40px] w-auto object-contain mb-[8px]" />
               <div className="text-[22px]">detailing studio</div>
               <Colors colors={['#F3C428', '#000000', '#CDA383']} handleCopy={handleCopy} copiedColor={copiedColor} lastCopied={lastCopied} />
-              <div className="text-[20px] mb-[8px] flex items-start gap-[8px]"><ArrowIcon /> UI/UX concept & hero design</div>
+              <div className="text-[20px] mb-[8px]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> UI/UX concept & hero design</div>
                <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: geminiIcon}]} />
               <div className="text-[20px] italic font-serif mb-[32px] text-gray-800">
                  "How do we make a detailing studio feel like a luxury automotive brand rather than just a car wash?"
