@@ -141,8 +141,8 @@ const Colors = ({ colors, handleCopy, copiedColor, lastCopied }: { colors: strin
             <div 
               key={i} 
               onClick={(e) => { e.stopPropagation(); handleCopy(c); }}
-              className={`w-[24px] h-[24px] rounded-full border cursor-pointer hover:scale-110 transition-transform ${isWhite ? 'border-black/10' : 'border-white'} relative`} 
-              style={{ backgroundColor: c, zIndex: colors.length - i }} 
+              className={`animate-wiggle w-[24px] h-[24px] rounded-full border cursor-pointer hover:scale-110 transition-transform ${isWhite ? 'border-black/10' : 'border-white'} relative`} 
+              style={{ backgroundColor: c, zIndex: colors.length - i, animationDelay: `${i * 0.6}s` }} 
               title={`Click to copy ${c}`}
             >
               <div className="absolute -inset-1 rounded-full cursor-pointer" />
@@ -185,7 +185,7 @@ export default function Works() {
     <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
       
       {/* Go Back: fixed + mix-blend-difference, with top padding */}
-      <div className="fixed top-0 left-0 right-0 pointer-events-none pt-[12px] md:pt-[20px]" style={{ zIndex: 9999, mixBlendMode: 'difference' }}>
+      <div className="fixed top-0 left-0 right-0 pointer-events-none pt-[80px]" style={{ zIndex: 9999, mixBlendMode: 'difference' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-[60px] h-[48px] flex items-center">
           <Link href="/" className="pointer-events-auto group text-[16px] md:text-[20px] text-white transition-colors flex items-center gap-[6px] md:gap-[8px] -m-2 p-2 focus:outline-none whitespace-nowrap">
             <ArrowIcon className="rotate-180" /> go back
@@ -194,7 +194,7 @@ export default function Works() {
       </div>
 
       {/* Get in Touch: fixed at same position — pt + h-[48px] matches Go Back exactly */}
-      <div className="fixed top-0 left-0 right-0 pointer-events-none pt-[12px] md:pt-[20px]" style={{ zIndex: 9998, height: 'auto' }}>
+      <div className="fixed top-0 left-0 right-0 pointer-events-none pt-[80px]" style={{ zIndex: 9998, height: 'auto' }}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-[60px] h-[48px] flex items-center justify-end">
           <SolidButton href="https://t.me/maybellineswag" target="_blank" className="pointer-events-auto text-[14px] md:text-[18px] px-[12px] py-[8px] md:px-[18px] md:py-[12px] flex items-center gap-[6px] md:gap-[8px] whitespace-nowrap">
             <TelegramIcon className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" /> get in touch
@@ -202,8 +202,8 @@ export default function Works() {
         </div>
       </div>
 
-      {/* Spacer: pt-[12px]+h-[48px]+mb-[40px] matches fixed header footprint */}
-      <div className="pt-[12px] md:pt-[20px] mb-[40px]" aria-hidden="true">
+      {/* Spacer: pt-[80px]+h-[48px]+mb-[40px] matches fixed header footprint */}
+      <div className="pt-[80px] mb-[40px]" aria-hidden="true">
         <div style={{ height: '48px' }} />
       </div>
 
@@ -240,13 +240,13 @@ export default function Works() {
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: geminiIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}]} />
                 <div className="text-[20px] italic font-serif text-gray-800">"How do we eliminate the stigma of used vehicles from Japan to European customers?"</div>
               </div>
-              <Image src={magnolia1} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={magnolia1} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Real auction results displayed directly in the Hero</span>, leading with the price gap because that&apos;s the only thing that earns a €100k+ buyer&apos;s attention before they&apos;ve even read a word.</div>
-              <Image src={magnolia2} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={magnolia2} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">&quot;Where Your Savings Come From?&quot;</span> traces the exact journey of a car — manufactured in Europe, bought by a diplomat in Tokyo, acquired at Japanese auction — making the arbitrage tangible and eliminating the grey market fear.</div>
-              <Image src={magnolia3} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={magnolia3} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Brand selector leads the intake Request your car form</span> — letting the client pick Porsche or Ferrari makes the process feel personal before any commitment.</div>
-              <Image src={magnolia4} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={magnolia4} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">A four-step process with time estimates (&quot;approve bid — 10 minutes&quot;) in the How It Works?</span> section directly addresses the core objection: that importing is complicated.</div>
             </div>
           </section>
@@ -284,13 +284,13 @@ export default function Works() {
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}, {src: psIcon}, {src: antigravityIcon}, {src: notionIcon}, {src: githubIcon}, {src: nextjsIcon}, {src: altegioIcon}]} />
                 <div className="text-[20px] italic font-serif text-gray-800">"How do we make a small Czech clinic feel like a premium western medical brand that women actually trust?"</div>
               </div>
-              <Image src={gennero1} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={gennero1} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full medical team Hero image</span> — leading with real faces rather than stock photography immediately signals authenticity and human warmth.</div>
-              <Image src={gennero2} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={gennero2} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Individual doctor profile pages</span> — each doctor gets their own dedicated page with photo, specialty and bio, systematically building personal trust before a patient even books.</div>
-              <Image src={gennero3} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={gennero3} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">The Services architecture split across three departments</span> — Gynaecology, Cosmetology and Dermatology — with anchor-based navigation so patients land exactly where they need.</div>
-              <Image src={gennero4} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={gennero4} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Altegio online booking fully integrated and configured</span> — patients can book directly from the site, a technical deliverable most designers don&apos;t handle.</div>
             </div>
           </section>
@@ -326,11 +326,11 @@ export default function Works() {
                 <TechIcons icons={[{src: figmaIcon}, {src: aiIcon}]} />
                 <div className="text-[20px] italic font-serif text-gray-800">"How do we build a brand identity premium enough to sell an AI product to serious e-commerce businesses as a verified TikTok partner?"</div>
               </div>
-              <Image src={dimension1} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={dimension1} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Character mascot designed across multiple states and colorways</span> — giving the AI product a personality that feels approachable rather than cold and technical.</div>
-              <Image src={dimension2} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={dimension2} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Full logo exploration across multiple directions</span> — from geometric 3D cube marks referencing e-commerce and product boxes, to wordmark and icon combinations, giving the client real strategic options.</div>
-              <Image src={dimension3} alt="project image" className="w-full h-auto object-cover" />
+              <Image src={dimension3} alt="project image" className="w-full h-auto object-cover" placeholder="blur" sizes="(max-width: 768px) 100vw, 640px" quality={85} />
               <div className="text-[18px] text-gray-700 leading-[1.4]"><ArrowIcon className="inline-block mr-[8px] align-middle" /> <span className="text-black font-normal font-serif italic text-[1.1em]">Designed for an official TikTok Shop partner</span> — brand needed to signal credibility and modernity to serious e-commerce operators, not just look good.</div>
             </div>
           </section>

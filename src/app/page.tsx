@@ -283,7 +283,7 @@ export default function Portfolio() {
                 <a href="https://www.instagram.com/mollysantana00/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '5.6s' }}>Molly Santana</a>,{" "}
                 <a href="https://www.instagram.com/maluma/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '6.4s' }}>Maluma</a>,{" "}
                 <a href="https://www.instagram.com/untiljapan/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '7.2s' }}>Untiljapan</a>,{" "}
-                <a href="https://www.instagram.com/seventhheaven/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '8.0s' }}>Seventh Heaven</a> &amp; more
+                <a href="https://www.instagram.com/seventhheaven/" target="_blank" className="animate-wiggle inline-block hover:text-amber transition-colors" style={{ animationDelay: '8.0s' }}>Seventh Heaven</a>{" "} &amp; more
               </div>
               <div className="mt-[28px]">
                 <SolidButton href="/works" className="flex items-center gap-[10px]">
