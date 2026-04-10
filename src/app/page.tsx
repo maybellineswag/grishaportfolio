@@ -119,13 +119,13 @@ export default function Portfolio() {
             
             <Reveal className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-2" stagger={0.1} threshold={0}>
                <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group -m-2 p-2 w-fit">
-                 <div className="w-[18px] flex justify-center translate-y-[1px]">
+                 <div className="w-[18px] flex justify-center translate-y-[2px]">
                    <TelegramIcon className="text-amber" />
                  </div>
                  <span className="group-hover:text-amber transition-colors">maybellineswag</span>
                </a>
-               <a href="mailto:advantagesofkindness@gmail.com?subject=We%20searched%20the%20whole%20internet%20and%20found%20you&body=Hello%20Grisha%2C%0A%0AWe%20came%20across%20your%20work%20and%20honestly%20we%20weren't%20expecting%20to%20be%20this%20impressed.%20We%20have%20an%20open%20position%20%2F%20project%20that%20feels%20like%20it%20was%20made%20for%20you%20%E2%80%94%20good%20pay%2C%20interesting%20work%2C%20and%20people%20who%20actually%20have%20taste.%0AWould%20love%20to%20get%20on%20call%20and%20tell%20you%20more.%0A%0ALooking%20forward%20to%20hearing%20from%20you%20Grisha!" className="flex items-center gap-3 group -m-2 p-2 w-fit">
-                 <div className="w-[18px] flex justify-center translate-y-[1px]">
+               <a href="mailto:advantagesofkindness@gmail.com?subject=We%20searched%20the%20whole%20internet%20and%20found%20you&body=Hello%20Grisha%2C%0A%0AWe%20came%20across%20your%20work%20and%20honestly%20we%20weren%27t%20expecting%20to%20be%20this%20impressed.%20We%20have%20an%20open%20position%20%2F%20project%20that%20feels%20like%20it%20was%20made%20for%20you%20%E2%80%94%20good%20pay%2C%20interesting%20work%2C%20and%20people%20who%20actually%20have%20taste.%0AWould%20love%20to%20get%20on%20call%20and%20tell%20you%20more.%0A%0ALooking%20forward%20to%20hearing%20from%20you%20Grisha!" className="flex items-center gap-3 group -m-2 p-2 w-fit">
+                 <div className="w-[18px] flex justify-center translate-y-[2px]">
                    <MailIcon className="text-amber" />
                  </div>
                  <span className="group-hover:text-amber transition-colors">advantagesofkindness@gmail.com</span>
