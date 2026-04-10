@@ -148,7 +148,21 @@ export default function Portfolio() {
 
             {/* MOBILE CLIENTS LIST */}
             <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px]" delay={0.2} threshold={0}>
-              past clients: The Weeknd, Sp5der, PinkPantheress, Nettspend & more
+              <span>past clients: </span>
+              <a href="https://www.instagram.com/theweeknd/" target="_blank" className="animate-wiggle hover:text-amber transition-colors inline-block" style={{ animationDelay: '0s' }}>The Weeknd</a>
+              <span>, </span>
+              <a href="https://www.instagram.com/sp5derworldwide/" target="_blank" className="animate-wiggle hover:text-amber transition-colors inline-block" style={{ animationDelay: '1.2s' }}>Sp5der</a>
+              <span>, </span>
+              <a href="https://www.instagram.com/pinkpantheress/" target="_blank" className="animate-wiggle hover:text-amber transition-colors inline-block" style={{ animationDelay: '2.4s' }}>PinkPantheress</a>
+              <span>, </span>
+              <a href="https://www.instagram.com/nettspend_/" target="_blank" className="animate-wiggle hover:text-amber transition-colors inline-block" style={{ animationDelay: '3.6s' }}>Nettspend</a>
+              <span> & </span>
+              <button 
+                onClick={() => lenis?.scrollTo('#background', { duration: 2 })}
+                className="animate-wiggle hover:text-amber transition-colors cursor-pointer" style={{ animationDelay: '4.8s' }}
+              >
+                more
+              </button>
             </Reveal>
 
             <Reveal className="mt-[28px] leading-[1.4] hidden md:flex flex-col gap-1 text-[#888888]" stagger={0.1} delay={0.8}>

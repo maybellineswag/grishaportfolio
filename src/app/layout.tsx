@@ -28,6 +28,8 @@ export const metadata: Metadata = {
   description: 'ui & ux product design based in europe. open to remote & on-site roles.',
   icons: {
     icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   openGraph: {
     title: 'grisha obolenskiy — ui & ux product design',
