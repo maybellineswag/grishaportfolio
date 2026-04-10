@@ -23,14 +23,14 @@ const appleGaramond = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'grisha obolenskiy — ui/ux & product designer',
-  description: 'ui ux & product designer based in europe. open to remote & on-site roles.',
+  title: 'grisha obolenskiy — ui & ux product design',
+  description: 'ui & ux product design based in europe. open to remote & on-site roles.',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'grisha obolenskiy — ui/ux & product designer',
-    description: 'ui ux & product designer based in europe. open to remote & on-site roles.',
+    title: 'grisha obolenskiy — ui & ux product design',
+    description: 'ui & ux product design based in europe. open to remote & on-site roles.',
     url: 'https://grishaobolenskiy.com',
     siteName: 'Grisha Obolenskiy',
     images: [
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'grisha obolenskiy — ui/ux & product designer',
-    description: 'ui ux & product designer based in europe. open to remote & on-site roles.',
+    title: 'grisha obolenskiy — ui & ux product design',
+    description: 'ui & ux product design based in europe. open to remote & on-site roles.',
     images: ['/opengraph-image.png'],
   },
 };

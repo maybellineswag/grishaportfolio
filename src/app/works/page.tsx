@@ -182,7 +182,7 @@ export default function Works() {
   };
 
   return (
-    <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
+    <main className="max-w-[1400px] mx-auto px-6 md:px-[60px] pt-[20px] md:pt-[60px] pb-[160px] flex flex-col text-[#111111] leading-[1.3] tracking-[-0.03em] bg-white">
       
       {/* Go Back: fixed + mix-blend-difference, with top padding */}
       <div className="fixed top-0 left-0 right-0 pointer-events-none pt-[80px]" style={{ zIndex: 9999, mixBlendMode: 'difference' }}>
@@ -203,7 +203,7 @@ export default function Works() {
       </div>
 
       {/* Spacer: pt-[80px]+h-[48px]+mb-[40px] matches fixed header footprint */}
-      <div className="pt-[80px] mb-[40px]" aria-hidden="true">
+      <div className="pt-[80px] mb-[20px] md:mb-[40px]" aria-hidden="true">
         <div style={{ height: '48px' }} />
       </div>
 
