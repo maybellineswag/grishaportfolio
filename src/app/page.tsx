@@ -26,7 +26,7 @@ const TelegramIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const MailIcon = ({ className = "" }: { className?: string }) => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
+  <svg viewBox="0 0 24 24" fill="currentColor" className={`w-[16px] h-[16px] transition-transform duration-300 group-hover:scale-110 ${className}`}>
     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
   </svg>
 );
@@ -117,13 +117,17 @@ export default function Portfolio() {
               </div>
             </Reveal>
             
-            <Reveal className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-1" stagger={0.1} threshold={0}>
-               <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group -m-2 p-2 w-fit">
-                 <TelegramIcon className="text-amber" />
+            <Reveal className="block md:hidden mt-[28px] text-[#111111] font-normal space-y-2" stagger={0.1} threshold={0}>
+               <a href="https://t.me/maybellineswag" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group -m-2 p-2 w-fit">
+                 <div className="w-[18px] flex justify-center">
+                   <TelegramIcon className="text-amber" />
+                 </div>
                  <span className="group-hover:text-amber transition-colors">maybellineswag</span>
                </a>
-               <a href="mailto:advantagesofkindness@gmail.com" className="flex items-center gap-2 group -m-2 p-2 w-fit">
-                 <MailIcon className="text-amber" />
+               <a href="mailto:advantagesofkindness@gmail.com" className="flex items-center gap-3 group -m-2 p-2 w-fit">
+                 <div className="w-[18px] flex justify-center">
+                   <MailIcon className="text-amber" />
+                 </div>
                  <span className="group-hover:text-amber transition-colors">advantagesofkindness@gmail.com</span>
                </a>
             </Reveal>
@@ -147,7 +151,7 @@ export default function Portfolio() {
             </Reveal>
 
             {/* MOBILE CLIENTS LIST */}
-            <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px]" boxClassName="inline-block mr-[0.22em]" delay={0.2} threshold={0}>
+            <Reveal className="mt-[28px] leading-[1.4] block md:hidden text-[19px] flex flex-wrap items-baseline" boxClassName="inline-block mr-[0.22em]" delay={0.2} threshold={0}>
               <span>past clients: </span>
               <a href="https://www.instagram.com/theweeknd/" target="_blank" className="animate-wiggle hover:text-amber transition-colors inline-block" style={{ animationDelay: '0s' }}>The Weeknd</a>
               <span>, </span>
