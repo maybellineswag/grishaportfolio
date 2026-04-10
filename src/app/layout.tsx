@@ -23,6 +23,7 @@ const appleGaramond = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://grishaui.com'),
   title: 'grisha obolenskiy — ui & ux product design',
   description: 'ui & ux product design based in europe. open to remote & on-site roles.',
   icons: {
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'grisha obolenskiy — ui & ux product design',
     description: 'ui & ux product design based in europe. open to remote & on-site roles.',
-    url: 'https://grishaobolenskiy.com',
+    url: 'https://grishaui.com',
     siteName: 'Grisha Obolenskiy',
     images: [
       {

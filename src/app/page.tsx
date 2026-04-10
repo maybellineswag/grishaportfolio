@@ -95,7 +95,7 @@ export default function Portfolio() {
             </h1>
             
             <Reveal className="leading-[1.4] mt-[20px]" stagger={0.15} threshold={0}>
-              <div>ui ux & product designer</div>
+              <div>ui & ux product design</div>
               <div className="flex items-center gap-[8px] inline-flex">
                 based in <Image src={europeIcon} alt="europe" width={32} height={32} /> europe
               </div>
@@ -209,13 +209,13 @@ export default function Portfolio() {
 
       <div className="flex flex-col gap-[80px] md:gap-[140px]">
         {/* SECTION 2: HOW I WORK */}
-        <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
+        <section className="flex flex-col md:flex-row justify-center gap-6 md:gap-[100px] items-start text-left">
           <FadeInSection>
             <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
               <Image src={howIWorkImg} alt="how i work screenshot" width={440} height={264} className="w-full h-auto object-cover" />
             </div>
           </FadeInSection>
-          <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
+          <div className="w-full md:w-[440px] pt-2 md:pt-[32px]">
             <Reveal className="flex flex-col gap-[10px] items-center md:items-start" stagger={0.18} duration={2.5}>
               <div className="text-[23px] font-normal leading-tight w-full mb-[16px]">
                 <AmberDot />how i work
@@ -234,13 +234,13 @@ export default function Portfolio() {
         </section>
 
         {/* SECTION 3: NOTION */}
-        <section className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
+        <section className="flex flex-col md:flex-row justify-center gap-6 md:gap-[100px] items-start text-left">
           <FadeInSection>
             <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
               <Image src={notionImg} alt="notion board screenshot" width={440} height={264} className="w-full h-auto object-cover" />
             </div>
           </FadeInSection>
-          <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
+          <div className="w-full md:w-[440px] pt-2 md:pt-[32px]">
             <Reveal className="flex flex-col gap-[10px] items-center md:items-start" stagger={0.18} duration={2.5}>
               <div className="text-[23px] font-normal leading-tight w-full mb-[16px]">
                 <AmberDot />every project lives in notion
@@ -258,13 +258,13 @@ export default function Portfolio() {
         </section>
 
         {/* SECTION 4: BACKGROUND */}
-        <section id="background" className="flex flex-col md:flex-row justify-center gap-10 md:gap-[100px] items-start text-left">
+        <section id="background" className="flex flex-col md:flex-row justify-center gap-6 md:gap-[100px] items-start text-left">
           <FadeInSection>
             <div className="w-full md:w-[440px] shrink-0 relative md:top-[40px]">
               <Image src={merchImg} alt="my background" width={440} height={237} className="w-full h-auto object-cover" />
             </div>
           </FadeInSection>
-          <div className="w-full md:w-[440px] pt-4 md:pt-[32px]">
+          <div className="w-full md:w-[440px] pt-2 md:pt-[32px]">
             <Reveal className="flex flex-col gap-[10px] items-start" stagger={0.18} duration={2.5}>
               <div className="text-[23px] font-normal leading-tight w-full mb-[16px]">
                 <AmberDot />my background
